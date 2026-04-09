@@ -1,0 +1,115 @@
+.ambient-effects {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* === Light Rays === */
+.light-rays {
+  position: absolute;
+  inset: 0;
+  transition: opacity 1s ease;
+}
+
+.light-ray {
+  position: absolute;
+  top: -20%;
+  width: 200px;
+  height: 150%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 240, 0.12) 0%,
+    rgba(255, 255, 240, 0) 100%
+  );
+  transform-origin: top center;
+  animation: ray-sway 8s ease-in-out infinite;
+}
+
+.ray-1 { left: 15%; transform: rotate(-15deg); animation-delay: 0s; width: 180px; }
+.ray-2 { left: 45%; transform: rotate(-5deg);  animation-delay: 2.5s; width: 150px; }
+.ray-3 { left: 72%; transform: rotate(-20deg); animation-delay: 5s; width: 120px; }
+
+@keyframes ray-sway {
+  0%, 100% { transform: rotate(-15deg) scaleX(1); opacity: 0.7; }
+  50%      { transform: rotate(-10deg) scaleX(1.1); opacity: 1; }
+}
+
+/* === Bubbles === */
+.bubbles-container {
+  position: absolute;
+  inset: 0;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -20px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.1) 60%,
+    transparent
+  );
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: bubble-rise linear infinite;
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(30px);
+    opacity: 0;
+  }
+}
+
+/* === Particles === */
+.particles-container {
+  position: absolute;
+  inset: 0;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(200, 220, 255, 0.6);
+  animation: particle-drift ease-in-out infinite;
+}
+
+@keyframes particle-drift {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(15px, -10px);
+  }
+  50% {
+    transform: translate(-10px, -20px);
+  }
+  75% {
+    transform: translate(5px, -5px);
+  }
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+  .bubble,
+  .particle,
+  .light-ray {
+    animation: none !important;
+  }
+
+  .light-rays {
+    display: none;
+  }
+}

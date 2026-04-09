@@ -1,0 +1,59 @@
+.scene-decorations-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.scene-group {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.7s ease;
+}
+
+.scene-group-active {
+  opacity: 1;
+}
+
+.scene-group-inactive {
+  opacity: 0;
+}
+
+.scene-decoration {
+  position: fixed;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Rock band — always behind all other scene assets */
+.scene-decoration-rock.scene-dec-far {
+  z-index: 0;
+}
+
+.scene-decoration-rock.scene-dec-mid {
+  z-index: 1;
+}
+
+.scene-decoration-rock.scene-dec-near {
+  z-index: 2;
+}
+
+/* Scene asset band — creatures, coral, bubbles, props */
+.scene-decoration-asset.scene-dec-far {
+  z-index: 3;
+}
+
+.scene-decoration-asset.scene-dec-mid {
+  z-index: 4;
+}
+
+.scene-decoration-asset.scene-dec-near {
+  z-index: 5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-group {
+    transition: none;
+  }
+}
