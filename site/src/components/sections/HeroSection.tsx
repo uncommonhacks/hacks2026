@@ -4,11 +4,10 @@ export default function HeroSection() {
   return (
     <SectionContainer index={0}>
       <img
-        src="/assets/branding/new_shark_logo.jpg"
+        src="/assets/branding/new_logo_blue.png"
         alt="Uncommon Hacks"
-        style={{ width: '280px', maxWidth: '80%', marginBottom: '1rem' }}
+        style={{ width: '1150px', maxWidth: '100vw', display: 'block', marginLeft: '-113px', marginTop: '-210px', marginBottom: '1rem' }}
       />
-      <h2>Uncommon Hacks 2026</h2>
       <p>
         UChicago&apos;s premier hackathon. Build something uncommon.
       </p>
