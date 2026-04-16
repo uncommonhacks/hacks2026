@@ -3,7 +3,6 @@ import SectionContainer from './SectionContainer';
 export default function ContactSection() {
   return (
     <SectionContainer index={4}>
-      <h2>Contact</h2>
       <p>
         Have questions? Want to get involved? Reach out!
       </p>

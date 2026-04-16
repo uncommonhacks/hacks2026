@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'PhoFont';
+  src: url('../assets/fonts/PhoFont-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {

@@ -3,19 +3,16 @@ import SectionContainer from './SectionContainer';
 export default function SponsorsSection() {
   return (
     <SectionContainer index={2}>
-      <h2>Sponsors</h2>
-      <p>Uncommon Hacks is made possible by our generous sponsors.</p>
+      <p className="sponsor-headline">Uncommon Hacks is made possible by our generous sponsors.</p>
 
       {/* Replace placeholders with actual sponsor logos */}
       <div className="sponsor-tier">
-        <h3>Title</h3>
         <div className="sponsor-logos">
           <div className="sponsor-placeholder">Logo</div>
           <div className="sponsor-placeholder">Logo</div>
         </div>
       </div>
       <div className="sponsor-tier">
-        <h3>Gold</h3>
         <div className="sponsor-logos">
           <div className="sponsor-placeholder">Logo</div>
           <div className="sponsor-placeholder">Logo</div>
@@ -23,7 +20,6 @@ export default function SponsorsSection() {
         </div>
       </div>
       <div className="sponsor-tier">
-        <h3>Silver</h3>
         <div className="sponsor-logos">
           <div className="sponsor-placeholder">Logo</div>
           <div className="sponsor-placeholder">Logo</div>
