@@ -24,9 +24,6 @@ export default function HeroSection() {
         <p className="hero-date">
           May 16<span className="thin-dash">–</span>17, 2026. Don&apos;t just watch <span className="thin-dash">—</span> build something uncommon.
         </p>
-        <a href="#apply" className="cta-button">
-          Apply Now
-        </a>
       </div>
     </>
   );

@@ -3,11 +3,11 @@ import SectionContainer from './SectionContainer';
 export default function FAQSection() {
   // Replace with actual FAQ content
   const faqs = [
+    { q: 'When and where is it?', a: 'May 16–17th at Polsky Exchange North (1452 E 53rd St, Chicago, IL 60615).' },
     { q: 'Who can participate?', a: 'Any university student — undergraduate or graduate. No prior hackathon experience needed.' },
     { q: 'How much does it cost?', a: 'Nothing! Uncommon Hacks is completely free. We provide food, swag, and workspace.' },
     { q: 'Do I need a team?', a: 'You can come solo or with a team of up to four. We also have team formation activities.' },
     { q: 'What should I bring?', a: 'Your laptop, charger, and anything else you need to be comfortable for a weekend of hacking.' },
-    { q: 'When and where is it?', a: 'Spring 2026 at the University of Chicago. Exact dates and venue coming soon.' },
   ];
 
   return (
