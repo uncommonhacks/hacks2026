@@ -9,6 +9,15 @@ function SceneDecoration({ config }: { config: SceneDecorationConfig }) {
     'scene-dec-mid';
   const decorationClass = config.isRock ? 'scene-decoration-rock' : 'scene-decoration-asset';
 
+  const filters: string[] = [];
+  if (config.brightness !== undefined) {
+    filters.push(`brightness(${config.brightness})`);
+  }
+  if (config.blueTint !== undefined && config.blueTint > 0) {
+    const t = Math.min(Math.max(config.blueTint, 0), 1);
+    filters.push(`sepia(${t}) saturate(${1 + t * 5}) hue-rotate(${190 + t * 10}deg)`);
+  }
+
   return (
     <img
       src={config.src}
@@ -20,6 +29,7 @@ function SceneDecoration({ config }: { config: SceneDecorationConfig }) {
         width: `${config.width}vw`,
         transform: config.flipX ? 'scaleX(-1)' : undefined,
         opacity: config.opacity ?? 1,
+        filter: filters.length > 0 ? filters.join(' ') : undefined,
       }}
     />
   );

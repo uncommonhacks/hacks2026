@@ -8,13 +8,12 @@ export default function TracksSection() {
   return (
     <div
       className={`section-container ${isActive ? 'section-active' : 'section-inactive'}`}
-      style={{ justifyContent: 'flex-end', alignItems: 'flex-start', paddingRight: '8%' }}
       aria-hidden={!isActive}
     >
       <img
         src="/assets/branding/tracks_black.png"
         alt="Tracks"
-        style={{ width: '500px', maxWidth: '40vw' }}
+        style={{ width: '340px', maxWidth: '28vw', marginTop: '-4vh' }}
       />
     </div>
   );
