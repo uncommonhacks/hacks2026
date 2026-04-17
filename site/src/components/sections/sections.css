@@ -8,7 +8,7 @@
   pointer-events: none;
   transition: opacity 0.6s ease, transform 0.6s ease;
   padding-top: 8vh;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .section-active {
@@ -178,10 +178,24 @@
   opacity: 0.7;
 }
 
+/* Contact section — enlarged */
+.contact-section p {
+  font-size: 3.4rem;
+}
+
+.contact-section .contact-links a {
+  font-size: 2.3rem;
+}
+
+.contact-section .cta-button {
+  font-size: 2.35rem;
+  padding: 1.3rem 3.6rem;
+}
+
 /* Hero about */
 .hero-about {
   position: fixed;
-  top: calc(62vh - 75px);
+  top: calc(62vh - 165px);
   left: 50%;
   transform: translateX(-50%);
   max-width: 900px;
@@ -203,7 +217,7 @@
 
 .hero-about p {
   font-family: 'PhoFont', sans-serif;
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   line-height: 1.15;
   font-weight: 700;
   color: #000000;
@@ -213,7 +227,7 @@
 
 .hero-about .hero-date {
   margin-top: 0.3rem;
-  font-size: 3.5rem;
+  font-size: 3.1rem;
   font-weight: 700;
 }
 

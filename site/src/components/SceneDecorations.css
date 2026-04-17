@@ -9,15 +9,18 @@
 .scene-group {
   position: absolute;
   inset: 0;
-  transition: opacity 0.7s ease;
 }
 
-.scene-group-active {
-  opacity: 1;
-}
-
+/* Outgoing scene fades out quickly so the old creatures don't linger through the parallax */
 .scene-group-inactive {
   opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* Incoming scene waits for the parallax to settle before appearing (TRANSITION_DURATION ≈ 1s) */
+.scene-group-active {
+  opacity: 1;
+  transition: opacity 0.35s ease 0.9s;
 }
 
 .scene-decoration {

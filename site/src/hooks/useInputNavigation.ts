@@ -1,37 +1,37 @@
 import { useEffect, useRef } from 'react';
 import { useNavigation } from '../context/navigation';
 
-const WHEEL_THRESHOLD = 50;
+const WHEEL_THRESHOLD = 120;
 const SWIPE_THRESHOLD = 50;
+const NAVIGATION_COOLDOWN = 1000;
 
 export function useInputNavigation() {
-  const { navigateBy, isTransitioning } = useNavigation();
+  const { navigateBy } = useNavigation();
   const wheelAccumulator = useRef(0);
   const touchStartY = useRef<number | null>(null);
-  const isTransitioningRef = useRef(isTransitioning);
-
-  useEffect(() => {
-    isTransitioningRef.current = isTransitioning;
-    wheelAccumulator.current = 0;
-  }, [isTransitioning]);
+  const lastNavigateTime = useRef(0);
 
   useEffect(() => {
     function handleWheel(e: WheelEvent) {
       e.preventDefault();
-      if (isTransitioningRef.current) return;
+
+      const now = Date.now();
+      if (now - lastNavigateTime.current < NAVIGATION_COOLDOWN) {
+        wheelAccumulator.current = 0;
+        return;
+      }
 
       wheelAccumulator.current += e.deltaY;
 
       if (Math.abs(wheelAccumulator.current) >= WHEEL_THRESHOLD) {
         const direction = wheelAccumulator.current > 0 ? 1 : -1;
         wheelAccumulator.current = 0;
+        lastNavigateTime.current = now;
         navigateBy(direction);
       }
     }
 
     function handleKeyDown(e: KeyboardEvent) {
-      if (isTransitioningRef.current) return;
-
       if (e.key === 'ArrowDown') {
         e.preventDefault();
         navigateBy(1);
@@ -50,7 +50,6 @@ export function useInputNavigation() {
     }
 
     function handleTouchEnd(e: TouchEvent) {
-      if (isTransitioningRef.current) return;
       if (touchStartY.current === null) return;
 
       const deltaY = touchStartY.current - e.changedTouches[0].clientY;

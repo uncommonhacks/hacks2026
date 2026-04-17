@@ -54,26 +54,27 @@
 }
 
 .side-nav-label {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.75rem;
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.35rem;
+  font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: opacity 0.2s, transform 0.2s;
+  opacity: 0.85;
+  transform: translateX(0);
+  transition: opacity 0.2s, color 0.2s;
   white-space: nowrap;
   pointer-events: none;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85);
 }
 
 .side-nav-item:hover .side-nav-label {
   opacity: 1;
-  transform: translateX(0);
+  color: rgba(255, 255, 255, 1);
 }
 
 .side-nav-active .side-nav-label {
-  opacity: 0.9;
-  transform: translateX(0);
+  opacity: 1;
+  color: rgba(130, 220, 255, 1);
 }
 
 @media (max-width: 600px) {

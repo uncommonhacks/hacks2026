@@ -25,12 +25,18 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   const [imageHeight, setImageHeight] = useState(0);
   const currentSectionRef = useRef(initialSectionIndex);
   const isTransitioningRef = useRef(false);
+  const activeTimelineRef = useRef<gsap.core.Timeline | null>(null);
 
   const navigateTo = useCallback((index: number, instant = false) => {
     if (index < 0 || index >= SECTIONS.length) return;
-    if (isTransitioningRef.current && !instant) return;
     if (index === currentSectionRef.current && !instant) return;
     if (imageHeight <= 0) return;
+
+    // Interrupt any in-flight transition so chained navigations flow smoothly
+    if (activeTimelineRef.current) {
+      activeTimelineRef.current.kill();
+      activeTimelineRef.current = null;
+    }
 
     const viewportHeight = window.innerHeight;
     const toOffset = getOffset(index, imageHeight, viewportHeight);
@@ -55,8 +61,10 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
       onComplete: () => {
         isTransitioningRef.current = false;
         setIsTransitioning(false);
+        activeTimelineRef.current = null;
       },
     });
+    activeTimelineRef.current = tl;
 
     Object.entries(PARALLAX_RATES).forEach(([layer, rate]) => {
       const el = getRegisteredLayer(layer as keyof typeof PARALLAX_RATES);

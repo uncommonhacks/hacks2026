@@ -26,7 +26,7 @@ export default function SponsorsSection() {
         </div>
       </div>
 
-      <p style={{ marginTop: '1.5rem', fontSize: '0.95rem', opacity: 0.7 }}>
+      <p style={{ marginTop: '1.5rem', fontSize: '1.95rem', opacity: 0.8 }}>
         Interested in sponsoring? <a href="mailto:team@uncommonhacks.com" style={{ color: '#4fc3f7' }}>Get in touch</a>
       </p>
     </SectionContainer>

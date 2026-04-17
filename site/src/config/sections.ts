@@ -16,7 +16,7 @@ export const SECTIONS: SectionConfig[] = [
   { id: 'contact',  label: 'Contact',  hash: '#contact',  bgPosition: 0.92, depthZone: 1 },
 ];
 
-export const TRANSITION_DURATION = 1.2;
+export const TRANSITION_DURATION = 1.0;
 export const TRANSITION_EASE = 'power2.inOut';
 
 // Parallax rates per layer during transitions
