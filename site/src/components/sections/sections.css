@@ -205,12 +205,6 @@
   transition: opacity 0.6s ease;
   pointer-events: none;
   padding: 1.6rem 2.2rem;
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(12, 48, 72, 0.72) 0%, rgba(22, 88, 110, 0.62) 50%, rgba(8, 36, 60, 0.75) 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(130, 200, 230, 0.25);
-  box-shadow: 0 8px 48px rgba(0, 20, 40, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .hero-about-active {
@@ -228,7 +222,11 @@
   line-height: 1.15;
   font-weight: 700;
   color: #f5f5f0;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.95),
+    0 0 18px rgba(0, 0, 0, 0.85),
+    0 0 42px rgba(0, 0, 0, 0.7),
+    0 0 90px rgba(0, 10, 30, 0.5);
   margin-bottom: 0.4rem;
 }
 
