@@ -12,7 +12,7 @@ export default function HeroSection() {
         <img
           src="/assets/branding/new_logo_blue.png"
           alt="Uncommon Hacks"
-          style={{ width: '1150px', maxWidth: '100vw', display: 'block', marginLeft: '-113px', marginTop: '-520px', marginBottom: '0' }}
+          style={{ width: '950px', maxWidth: '100vw', display: 'block', marginLeft: '-13px', marginTop: '-400px', marginBottom: '0' }}
         />
       </SectionContainer>
       <div className={`hero-about ${isActive ? 'hero-about-active' : 'hero-about-inactive'}`}>

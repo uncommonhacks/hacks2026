@@ -3,6 +3,11 @@ import SectionContainer from './SectionContainer';
 export default function SponsorsSection() {
   return (
     <SectionContainer index={2}>
+      <img
+        src="/assets/branding/sponsors_black.png"
+        alt="Sponsors"
+        style={{ width: '330px', maxWidth: '28vw', marginTop: '-6vh', filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5))' }}
+      />
       <p className="sponsor-headline">Uncommon Hacks is made possible by our generous sponsors.</p>
 
       {/* Replace placeholders with actual sponsor logos */}

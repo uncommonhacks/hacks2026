@@ -13,7 +13,7 @@ export default function TracksSection() {
       <img
         src="/assets/branding/tracks_black.png"
         alt="Tracks"
-        style={{ width: '340px', maxWidth: '28vw', marginTop: '-4vh' }}
+        style={{ width: '280px', maxWidth: '28vw', marginTop: '-4vh', filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5))' }}
       />
     </div>
   );

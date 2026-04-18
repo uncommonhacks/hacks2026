@@ -3,6 +3,11 @@ import SectionContainer from './SectionContainer';
 export default function ContactSection() {
   return (
     <SectionContainer index={4}>
+      <img
+        src="/assets/branding/contact_white.png"
+        alt="Contact"
+        style={{ width: '300px', maxWidth: '28vw', marginTop: '-4vh', filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5))' }}
+      />
       <div className="contact-section">
         <p>
           Have questions? Want to get involved? Reach out!
