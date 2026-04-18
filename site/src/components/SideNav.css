@@ -77,7 +77,7 @@
   color: rgba(130, 220, 255, 1);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1300px) {
   .side-nav {
     right: 0.75rem;
   }

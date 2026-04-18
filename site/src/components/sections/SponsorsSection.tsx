@@ -3,10 +3,10 @@ import SectionContainer from './SectionContainer';
 const sponsors = [
   { name: 'UChicago Career Advancement', file: 'careeradvancement_logo_black_v2.png' },
   // { name: 'Lovable', file: 'lovable-dark-png.png' },
-  { name: 'ElevenLabs', file: 'elevenlabs-logo-black.png' },
+  { name: 'ElevenLabs', file: 'elevenlabs-logo-white.png' },
   { name: 'Snowflake', file: 'Snowflake_Logo_svg.png' },
   { name: 'Sigma Lab', file: 'SIGMA_LAB_LOGO.png' },
-  // { name: 'Polymarket', file: 'polymarket-logo-black.png' },
+  { name: 'Polymarket', file: 'polymarket-logo-white.png' },
 ];
 
 export default function SponsorsSection() {
@@ -29,7 +29,7 @@ export default function SponsorsSection() {
         </div>
       </div>
 
-      <p className="sponsor-cta" style={{ marginTop: '1.5rem', fontSize: '2.55rem', opacity: 0.8 }}>
+      <p className="sponsor-cta" style={{ marginTop: '1.5rem', fontSize: 'clamp(1.6rem, 2.8vw, 3rem)', opacity: 0.8 }}>
         Interested in sponsoring? <a href="mailto:uncommonhacks@gmail.com" style={{ color: '#4fc3f7' }}>Get in touch</a>
       </p>
     </SectionContainer>
