@@ -7,7 +7,7 @@ export default function HeroSection() {
       <img
         src="/assets/branding/new_logo_blue.png"
         alt="Uncommon Hacks"
-        style={{ width: '950px', maxWidth: '100vw', display: 'block', marginLeft: '-13px', marginTop: 'max(-30vw, -300px)', marginBottom: '0' }}
+        style={{ width: '950px', maxWidth: '100vw', display: 'block', position: 'relative', left: '50%', transform: 'translateX(-50%)', marginTop: 'max(-4vw, -100px)', marginBottom: '0' }}
       />
       <div className="hero-about">
         <p>

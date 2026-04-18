@@ -244,7 +244,7 @@
   transform: translateX(-50%);
   width: min(1500px, 80vw);
   max-width: none;
-  margin-top: clamp(-20rem, -6vw, -20rem);
+  margin-top: clamp(3rem, -6vw, -20rem);
   padding: 0 2.2rem;
   text-align: center;
 }
