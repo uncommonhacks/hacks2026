@@ -22,7 +22,7 @@ export default function HeroSection() {
           University of Chicago that could change how you think about what you can make.
         </p>
         <p className="hero-date">
-          May 16<span className="thin-dash">–</span>17, 2026. Don&apos;t just watch <span className="thin-dash">—</span> build something uncommon.
+          May 16 <span className="thin-dash">—</span> 17, 2026. Don&apos;t just watch <span className="thin-dash">—</span> build something uncommon.
         </p>
       </div>
     </>

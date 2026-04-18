@@ -1,9 +1,15 @@
 import SectionContainer from './SectionContainer';
 
+function wrapDashes(s: string) {
+  return s.split(/(—|–)/).map((part, i) =>
+    part === '—' || part === '–' ? <span key={i} className="thin-dash">{part}</span> : part
+  );
+}
+
 export default function FAQSection() {
   // Replace with actual FAQ content
   const faqs = [
-    { q: 'When and where is it?', a: 'May 16–17th at Polsky Exchange North (1452 E 53rd St, Chicago, IL 60615).' },
+    { q: 'When and where is it?', a: 'May 16 – 17th @ UChicago. Location will be sent out to accepted applicants!' },
     { q: 'Who can participate?', a: 'Any university student — undergraduate or graduate. No prior hackathon experience needed.' },
     { q: 'How much does it cost?', a: 'Nothing! Uncommon Hacks is completely free. We provide food, swag, and workspace.' },
     { q: 'Do I need a team?', a: 'You can come solo or with a team of up to four. We also have team formation activities.' },
@@ -20,8 +26,8 @@ export default function FAQSection() {
       <div>
         {faqs.map((faq, i) => (
           <details key={i} className="faq-item">
-            <summary>{faq.q}</summary>
-            <p>{faq.a}</p>
+            <summary>{wrapDashes(faq.q)}</summary>
+            <p>{wrapDashes(faq.a)}</p>
           </details>
         ))}
       </div>

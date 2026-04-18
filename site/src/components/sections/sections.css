@@ -26,7 +26,7 @@
   max-width: 750px;
   width: 90%;
   padding: 2rem;
-  color: #f0f4f8;
+  color: #303030;
   text-align: center;
   /* No background, no blur, no border — text lives in the scene */
 }
@@ -35,12 +35,11 @@
   font-family: 'PhoFont', sans-serif;
   font-size: 2.8rem;
   margin-bottom: 1rem;
-  font-weight: 700;
   letter-spacing: 0.03em;
   text-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.9),
-    0 0px 40px rgba(0, 0, 0, 0.6),
-    0 0px 80px rgba(0, 10, 30, 0.4);
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(255, 255, 255, 0.7),
+    0 0 40px rgba(255, 255, 255, 0.4);
 }
 
 .section-inner p {
@@ -48,8 +47,9 @@
   font-size: 2.2rem;
   line-height: 1.7;
   text-shadow:
-    0 1px 8px rgba(0, 0, 0, 0.85),
-    0 0px 30px rgba(0, 0, 0, 0.5);
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(255, 255, 255, 0.7),
+    0 0 40px rgba(255, 255, 255, 0.4);
 }
 
 .section-inner .cta-button {
@@ -90,7 +90,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
+  text-shadow: none;
+  color: #ffffff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.754);
+  /* text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(255, 255, 255, 0.7),
+    0 0 40px rgba(255, 255, 255, 0.4); */
 }
 
 .faq-item summary::after {
@@ -106,19 +112,38 @@
 .faq-item p {
   margin-top: 0.8rem;
   font-size: 2.2rem;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgb(0, 0, 0);
+}
+
+/* FAQ-specific dash styling — tune per-section without affecting other .thin-dash usage */
+.faq-item .thin-dash {
+  font-size: 0.4em;
+  font-weight: 500;
 }
 
 .section-inner .sponsor-headline {
-  font-size: 3.5rem;
+  font-size: 3rem;
+  font-weight: 900;
   line-height: 1.4;
   margin-bottom: 1.5rem;
-  color: #ffffff;
-  text-shadow:
-    0 0 10px rgba(0, 0, 0, 1),
-    0 0 20px rgba(0, 0, 0, 0.9),
-    0 2px 30px rgba(0, 0, 0, 0.8),
-    0 0 60px rgba(0, 0, 0, 0.6),
-    0 0 120px rgba(0, 10, 30, 0.5);
+  color: #262626;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.654);
+}
+
+.section-inner .sponsor-cta {
+  color: #000000;
+  font-weight: 900;
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.525);
+  /* text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.6),
+    0 0 16px rgba(255, 255, 255, 0.3); */
+}
+
+.section-inner .sponsor-cta a {
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+  /* 0 0 6px rgba(255, 255, 255, 0.6),
+     0 0 16px rgba(255, 255, 255, 0.3); */
 }
 
 /* Sponsor tiers */
@@ -133,14 +158,32 @@
   letter-spacing: 0.1em;
   opacity: 0.7;
   margin-bottom: 0.8rem;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+  /* text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8); */
 }
 
 .sponsor-logos {
   display: flex;
-  gap: 1.5rem;
+  gap: 2.5rem 3rem;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 180px;
+}
+
+.sponsor-logo img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.465));
 }
 
 .sponsor-placeholder {
@@ -171,7 +214,7 @@
   text-decoration: none;
   font-size: 1.1rem;
   transition: opacity 0.2s;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 2px 6px rgb(0, 0, 0);
 }
 
 .contact-links a:hover {
@@ -181,6 +224,8 @@
 /* Contact section — enlarged */
 .contact-section p {
   font-size: 3.4rem;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgb(0, 0, 0);
 }
 
 .contact-section .contact-links a {
@@ -218,22 +263,20 @@
 
 .hero-about p {
   font-family: 'PhoFont', sans-serif;
-  font-size: 2.8rem;
+  font-weight: 900;
+  font-size: 2.5rem;
   line-height: 1.15;
-  font-weight: 700;
-  color: #f5f5f0;
+  color: #303030;
   text-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.95),
-    0 0 18px rgba(0, 0, 0, 0.85),
-    0 0 42px rgba(0, 0, 0, 0.7),
-    0 0 90px rgba(0, 10, 30, 0.5);
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(255, 255, 255, 0.7),
+    0 0 40px rgba(255, 255, 255, 0.4);
   margin-bottom: 0.4rem;
 }
 
 .hero-about .hero-date {
-  margin-top: 0.3rem;
-  font-size: 3.1rem;
-  font-weight: 700;
+  margin-top: 1em;
+  font-size: 3rem;
 }
 
 @media (max-width: 600px) {
