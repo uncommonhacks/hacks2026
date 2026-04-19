@@ -13,11 +13,11 @@
   width: 5px;
   height: 100%;
   margin: 0 auto;
-  background: rgba(200, 220, 240, 0.22);
+  background: rgba(20, 50, 100, 0.55);
   border-radius: 3px;
   cursor: pointer;
   pointer-events: auto;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 .progress-fill {
@@ -25,7 +25,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(210, 225, 240, 0.55);
+  background: rgba(15, 40, 90, 0.85);
   transition: height 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
   border-radius: 3px;
   pointer-events: none;
@@ -38,8 +38,8 @@
   width: 14px;
   height: 26px;
   border-radius: 6px;
-  background: rgba(225, 235, 245, 0.92);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  background: rgba(12, 32, 80, 0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   transition: top 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.2s ease, box-shadow 0.2s ease;
   pointer-events: none;
   animation: scroll-hint 2.8s ease-in-out 1.2s 2 both;
@@ -51,12 +51,12 @@
 }
 
 .progress-track:hover .progress-thumb {
-  background: rgba(240, 248, 255, 1);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  background: rgba(25, 60, 130, 1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .progress-track:hover {
-  background: rgba(200, 220, 240, 0.32);
+  background: rgba(20, 50, 100, 0.7);
 }
 
 @media (max-width: 600px) {
