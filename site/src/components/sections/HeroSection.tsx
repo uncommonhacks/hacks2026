@@ -8,9 +8,9 @@ export default function HeroSection() {
         src="/assets/branding/new_logo_blue.png"
         alt="Uncommon Hacks"
         style={{
-          width: 'clamp(320px, 65vmin, 1100px)',
+          width: 'clamp(240px, 60vmin, 1100px)',
           maxWidth: '94vw',
-          maxHeight: '48vh',
+          maxHeight: '32vh',
           objectFit: 'contain',
           display: 'block',
           position: 'relative',
@@ -22,9 +22,8 @@ export default function HeroSection() {
       />
       <div className="hero-about">
         <p>
-          UChicago&apos;s flagship hackathon <span className="thin-dash">—</span> where 170 builders come together for 24 hours to
-          turn the wildest ideas into real, working projects. Free food. Free swag. Workshops. Mentorship. Prizes. One weekend at the
-          University of Chicago that could change how you think about what you can make.
+          UChicago&apos;s flagship hackathon <span className="thin-dash">—</span> 170 builders, 24 hours, the wildest
+          ideas turned into real, working projects. Free food. Free swag. Workshops. Mentorship. Prizes.
         </p>
         <p className="hero-date">
           May 16 <span className="thin-dash">—</span> 17, 2026. Don&apos;t just watch <span className="thin-dash">—</span> build something uncommon.

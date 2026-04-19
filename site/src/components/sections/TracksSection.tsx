@@ -2,21 +2,27 @@ import { useState } from 'react';
 import { useNavigation } from '../../context/navigation';
 import './sections.css';
 
+function wrapDashes(s: string) {
+  return s.split(/\s*([—–-])\s*/).map((part, i) =>
+    part === '—' || part === '–' || part === '-' ? <span key={i} className="thin-dash">{part}</span> : part
+  );
+}
+
 type Item = { name: string; desc: string };
 
 const TRACKS: Item[] = [
-  { name: 'Best Overall', desc: 'Awarded to the most impressive project across all dimensions — vision, execution, and originality.' },
-  { name: 'Best Use of Real-Time Data', desc: 'For the project that turns live data streams into something useful, beautiful, or both.' },
-  { name: 'Best Inference', desc: 'For the team pushing the limits of how models reason at the edge — speed, efficiency, or novelty.' },
-  { name: 'Best Game Design', desc: 'For the most polished, playable, and inventive game built over the weekend.' },
-  { name: 'Best Social Impact', desc: 'For projects that tackle real human problems — accessibility, community, education, or beyond.' },
-  { name: 'Best Agent for Prediction Markets', desc: 'For the most capable autonomous agent operating in prediction markets.' },
+  { name: 'Best Overall', desc: 'Awarded to the most impressive project across all dimensions — vision, execution, and pure originality.' },
+  { name: 'Best Use of Real-Time Data', desc: 'For the project that turns live data streams into something useful or beautiful — built to react instantly.' },
+  { name: 'Best Inference', desc: 'For the team pushing the limits of how models reason at the edge — speed, efficiency, scale, and novelty.' },
+  { name: 'Best Game Design', desc: 'For the most polished, playable, and inventive game built over the weekend — fresh, fun, and unforgettable.' },
+  { name: 'Best Social Impact', desc: 'For projects that tackle real human problems — accessibility, community, education, or anything beyond that.' },
+  { name: 'Best Agent for Prediction Markets', desc: 'For the most capable autonomous agent operating in prediction markets — reasoning, betting, and adapting.' },
 ];
 
 const AWARDS: Item[] = [
-  { name: 'Most Uncommon', desc: 'For the project that breaks the mold — weird, wild, and unexpected in the best way.' },
-  { name: 'Best Use of ElevenLabs', desc: 'For the most creative use of ElevenLabs voice technology in your project.' },
-  { name: 'Best Use of Snowflake', desc: 'For the most clever application of Snowflake data infrastructure.' },
+  { name: 'Most Uncommon', desc: 'For the project that breaks the mold — weird, wild, and unexpected in ways that redefine what is possible.' },
+  { name: 'Best Use of ElevenLabs', desc: 'For the most creative use of ElevenLabs voice technology — bringing characters, interfaces, or stories to life.' },
+  { name: 'Best Use of Snowflake', desc: 'For the most clever application of Snowflake data infrastructure — turning raw data into something insightful.' },
 ];
 
 function TrackPanel({ items, kind, heading }: { items: Item[]; kind: 'track' | 'award'; heading: string }) {
@@ -35,8 +41,8 @@ function TrackPanel({ items, kind, heading }: { items: Item[]; kind: 'track' | '
       <div className="track-panel-square">
         <span className="track-panel-num">{numLabel}</span>
       </div>
-      <h3 className="track-panel-name">{current.name}</h3>
-      <p className="track-panel-desc">{current.desc}</p>
+      <h3 className="track-panel-name">{wrapDashes(current.name)}</h3>
+      <p className="track-panel-desc">{wrapDashes(current.desc)}</p>
       <div className="track-panel-pager">
         <button
           className="track-pager-arrow"

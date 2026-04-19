@@ -72,7 +72,7 @@ export function useInputNavigation() {
 
     function handleTouchStart(e: TouchEvent) {
       touchStartY.current = e.touches[0].clientY;
-      touchScrollable.current = findScrollableAncestor(e.target, 1) || findScrollableAncestor(e.target, -1);
+      touchScrollable.current = findScrollable(e.target);
     }
 
     function handleTouchMove(e: TouchEvent) {

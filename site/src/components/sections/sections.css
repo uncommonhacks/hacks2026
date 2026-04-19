@@ -7,7 +7,7 @@
   z-index: 10;
   pointer-events: none;
   transition: opacity 0.6s ease, transform 0.6s ease;
-  padding-top: 8vh;
+  padding-top: clamp(1.2rem, 6vh, 6rem);
   overflow: hidden;
 }
 
@@ -25,7 +25,7 @@
 .section-inner {
   max-width: 750px;
   width: 90%;
-  padding: 2rem;
+  padding: clamp(0.5rem, 2vh, 2rem) 2rem;
   color: #303030;
   text-align: center;
   /* No background, no blur, no border — text lives in the scene */
@@ -144,6 +144,22 @@
 .faq-item .thin-dash {
   font-size: 0.4em;
   font-weight: 500;
+}
+
+/* Tracks-specific dash styling — controlled spacing, baseline-aligned to avoid line-metric perturbation */
+.track-panel-desc .thin-dash {
+  font-size: 0.75em;
+  font-weight: 400;
+  margin: 0 0.25em;
+  vertical-align: baseline;
+}
+
+/* Title hyphens (e.g. "Real-Time") — tight, no margin since these are compound words */
+.track-panel-name .thin-dash {
+  font-size: 0.75em;
+  font-weight: 400;
+  margin: 0;
+  vertical-align: baseline;
 }
 
 .section-inner .sponsor-headline {
@@ -267,6 +283,11 @@
   padding-top: clamp(2rem, 6vh, 5rem);
 }
 
+.section-container-vcenter {
+  align-items: center;
+  padding-top: 0;
+}
+
 .tracks-content {
   display: flex;
   flex-direction: column;
@@ -369,9 +390,6 @@
   margin-bottom: 1.1rem;
   max-width: 36ch;
   min-height: 4.1em;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
   text-shadow:
     0 0 8px rgba(255, 255, 255, 0.9),
     0 0 20px rgba(255, 255, 255, 0.7),
@@ -459,7 +477,7 @@
   transform: translateX(-50%);
   width: min(67vw, 1400px);
   max-width: none;
-  margin-top: clamp(3rem, -6vw, -20rem);
+  margin-top: clamp(2rem, 8vh, 8rem);
   padding: 0 2.2rem;
   text-align: center;
 }
@@ -467,8 +485,8 @@
 .hero-about p {
   font-family: 'PhoFont', sans-serif;
   font-weight: 900;
-  font-size: clamp(1.8rem, 4.8vmin, 5rem);
-  line-height: 1.2;
+  font-size: clamp(1rem, min(4.8vmin, 5vh), 5rem);
+  line-height: 1.18;
   color: #303030;
   text-shadow:
     0 0 8px rgba(255, 255, 255, 0.9),
@@ -478,8 +496,8 @@
 }
 
 .hero-about .hero-date {
-  margin-top: 0.8em;
-  font-size: clamp(2.1rem, 5.6vmin, 5.6rem);
+  margin-top: 0.7em;
+  font-size: clamp(1.2rem, min(5.6vmin, 5.5vh), 5.6rem);
 }
 
 @media (max-width: 600px) {
