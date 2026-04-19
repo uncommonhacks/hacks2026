@@ -23,7 +23,7 @@ export default function FAQSection() {
         alt="FAQ"
         style={{ width: '180px', maxWidth: '28vw', marginTop: '-6vh', filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5))' }}
       />
-      <div>
+      <div className="faq-scroll">
         {faqs.map((faq, i) => (
           <details key={i} className="faq-item">
             <summary>{wrapDashes(faq.q)}</summary>

@@ -1,6 +1,6 @@
 .side-nav {
   position: fixed;
-  right: 1.5rem;
+  right: 2.5rem;
   top: 50%;
   transform: translateY(-50%);
   z-index: 50;
