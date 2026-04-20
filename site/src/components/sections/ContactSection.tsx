@@ -17,7 +17,7 @@ export default function ContactSection() {
           <a href="https://instagram.com/uncommonhacks" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="https://twitter.com/uncommonhacks" target="_blank" rel="noopener noreferrer">Twitter</a>
         </div>
-        <a href="#apply" className="cta-button" style={{ marginTop: '2rem' }}>
+        <a href="https://forms.gle/hBwPZKyBmq4nfsh28" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ marginTop: '2rem' }}>
           Apply Now
         </a>
       </div>
