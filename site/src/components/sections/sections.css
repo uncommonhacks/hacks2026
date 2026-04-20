@@ -569,17 +569,14 @@
     margin-top: -1vh !important;
   }
 
-  /* FAQ — tighter fonts for phone widths.
-     Extra right padding clears the side-nav dots, and direction: rtl flips
-     the scrollbar to the left so an expanded item's scroll track doesn't
-     collide with the side-nav either. */
+  /* FAQ — narrow container so scrollbar + button sit just right of the
+     expansion + glyphs (like desktop) and clear of the side-nav dots. */
   .faq-scroll {
     max-height: 62vh;
-    padding-right: 3rem;
-    direction: rtl;
-  }
-  .faq-scroll > * {
-    direction: ltr;
+    width: calc(100% - 3rem);
+    margin-right: 3rem;
+    margin-left: 0;
+    padding-right: 0.6rem;
   }
   .faq-item {
     padding: 0.7rem 0;
@@ -610,31 +607,33 @@
     margin-top: 1rem !important;
   }
 
-  /* Contact — fit CTA and copy to phone width */
+  /* Contact — narrow container so text doesn't reach the side-nav dots,
+     with larger type that fills the extra vertical space. */
+  .contact-section {
+    width: min(calc(100vw - 120px), 620px);
+    margin: 0 auto;
+  }
   .contact-section p {
-    font-size: 1.4rem;
+    font-size: 1.85rem;
+    line-height: 1.25;
   }
   .contact-section .contact-links a {
-    font-size: 1.1rem;
+    font-size: 1.35rem;
   }
   .contact-section .cta-button {
-    font-size: 1.35rem;
-    padding: 0.9rem 2.2rem;
+    font-size: 1.6rem;
+    padding: 1.1rem 2.6rem;
   }
   .contact-links {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
-  /* Tracks — widen scroll container, shrink images + type.
-     direction: rtl moves the scrollbar to the left so it doesn't collide
-     with the side-nav dots on the right. Children restore direction: ltr. */
+  /* Tracks — narrower container so its scrollbar sits just right of the
+     pager rather than out at the viewport edge near the side-nav dots. */
   .tracks-scroll {
-    width: 92vw;
+    width: 72vw;
     max-height: 72vh;
-    direction: rtl;
-  }
-  .tracks-scroll > * {
-    direction: ltr;
+    margin: 0 auto;
   }
   .track-panels {
     flex-direction: column;
@@ -694,9 +693,10 @@
     width: 1.8rem;
   }
 
-  /* Hero about — widen on phone, scale fonts to fill vertical space */
+  /* Hero about — narrow container so text doesn't reach the side-nav dots,
+     with large fonts scaled up to fill the vertical space. */
   .hero-about {
-    width: min(94vw, 620px);
+    width: min(calc(100vw - 120px), 620px);
     padding: 0 0.6rem;
     margin-top: clamp(1rem, 3.5vh, 2.5rem);
   }
@@ -731,8 +731,18 @@
 
   /* Smallest phones — slightly tighter, still big enough to fill space */
   .hero-about {
-    width: 96vw;
+    width: calc(100vw - 110px);
     padding: 0 0.3rem;
+  }
+  .contact-section {
+    width: calc(100vw - 110px);
+  }
+  .contact-section p {
+    font-size: 1.6rem;
+  }
+  .contact-section .cta-button {
+    font-size: 1.4rem;
+    padding: 0.9rem 2rem;
   }
   .hero-about p {
     font-size: clamp(1.35rem, 6vw, 1.9rem);
@@ -764,11 +774,4 @@
     font-size: 1.2rem;
   }
 
-  .contact-section p {
-    font-size: 1.2rem;
-  }
-  .contact-section .cta-button {
-    font-size: 1.2rem;
-    padding: 0.8rem 1.8rem;
-  }
 }
