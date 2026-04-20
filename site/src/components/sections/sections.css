@@ -371,6 +371,10 @@
   height: clamp(178px, 20vw, 295px);
 }
 
+.track-panel--award .track-panel-name {
+  margin-top: clamp(-25px, -2vw, -17px);
+}
+
 .track-panel-image {
   width: 100%;
   height: 100%;
