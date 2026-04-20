@@ -47,13 +47,19 @@
 
 .side-nav-bubble {
   flex-shrink: 0;
-  transition: all 0.4s ease;
-  filter: drop-shadow(0 0 4px rgba(79, 195, 247, 0.3));
+  transition: all 0.25s ease;
+  filter: drop-shadow(0 0 4px rgba(0, 20, 50, 0.55));
   pointer-events: auto;
+  cursor: pointer;
+}
+
+.side-nav-bubble:hover {
+  transform: scale(1.25);
+  filter: drop-shadow(0 0 8px rgba(79, 195, 247, 0.85));
 }
 
 .side-nav-active .side-nav-bubble {
-  filter: drop-shadow(0 0 10px rgba(79, 195, 247, 0.6));
+  filter: drop-shadow(0 0 10px rgba(79, 195, 247, 0.75));
 }
 
 .side-nav-label {

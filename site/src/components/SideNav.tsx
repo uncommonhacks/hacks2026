@@ -21,10 +21,10 @@ export default function SideNav() {
               <svg className="side-nav-bubble" viewBox="0 0 24 24" width="24" height="24">
                 <circle
                   cx="12" cy="12"
-                  r={currentSection === i ? 10 : 6}
-                  fill={currentSection === i ? 'rgba(79, 195, 247, 0.8)' : 'rgba(255, 255, 255, 0.25)'}
-                  stroke="rgba(255, 255, 255, 0.4)"
-                  strokeWidth="1.5"
+                  r={currentSection === i ? 10 : 7}
+                  fill={currentSection === i ? 'rgba(79, 195, 247, 0.95)' : 'rgba(255, 255, 255, 0.85)'}
+                  stroke={currentSection === i ? 'rgba(255, 255, 255, 0.95)' : 'rgba(15, 40, 90, 0.85)'}
+                  strokeWidth="1.8"
                 />
               </svg>
               <span className="side-nav-label">{section.label}</span>
