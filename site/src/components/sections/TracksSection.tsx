@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigation } from '../../context/navigation';
+import SectionContainer from './SectionContainer';
 import './sections.css';
 
 function wrapDashes(s: string) {
@@ -8,21 +8,33 @@ function wrapDashes(s: string) {
   );
 }
 
-type Item = { name: string; desc: string; image: string };
+function wrapPrize(s: string) {
+  return s.split(/(\$)/).flatMap((chunk, i) =>
+    chunk === '$'
+      ? [<span key={`d${i}`} className="prize-dollar">$</span>]
+      : wrapDashes(chunk).map((node, j) =>
+          typeof node === 'string'
+            ? <span key={`t${i}-${j}`}>{node}</span>
+            : node
+        )
+  );
+}
+
+type Item = { name: string; desc: string; image: string; prize: string };
 
 const TRACKS: Item[] = [
-  { name: 'Best Overall', desc: 'Awarded to the most impressive project across all dimensions — vision, execution, and pure originality.', image: '/assets/tracks/bestoverall.png' },
-  { name: 'Best Use of Real-Time Data', desc: 'For the project that turns live data streams into something useful or beautiful — built to react instantly.', image: '/assets/tracks/realdata.png' },
-  { name: 'Best Inference', desc: 'For the team pushing the limits of how models reason at the edge — speed, efficiency, scale, and novelty.', image: '/assets/tracks/inference.png' },
-  { name: 'Best Game Design', desc: 'For the most polished, playable, and inventive game built over the weekend — fresh, fun, and unforgettable.', image: '/assets/tracks/gamedesign.png' },
-  { name: 'Best Social Impact', desc: 'For projects that tackle real human problems — accessibility, community, education, or anything beyond that.', image: '/assets/tracks/socialimpact.png' },
-  { name: 'Best Agent for Prediction Markets', desc: 'For the most capable autonomous agent operating in prediction markets — reasoning, betting, and adapting.', image: '/assets/tracks/predictionmarket.png' },
+  { name: 'Best Overall', desc: 'Awarded to the most impressive project across all dimensions — vision, execution, and pure originality.', image: '/assets/tracks/bestoverall.png', prize: '$1,000 + ElevenLabs Pro Tier ($99/mo)' },
+  { name: 'Best Use of Real-Time Data', desc: 'For the project that turns live data streams into something useful or beautiful — built to react instantly.', image: '/assets/tracks/realdata.png', prize: '$300' },
+  { name: 'Best Inference', desc: 'For the team pushing the limits of how models reason at the edge — speed, efficiency, scale, and novelty.', image: '/assets/tracks/inference.png', prize: '$300' },
+  { name: 'Best Game Design', desc: 'For the most polished, playable, and inventive game built over the weekend — fresh, fun, and unforgettable.', image: '/assets/tracks/gamedesign.png', prize: '$300' },
+  { name: 'Best Social Impact', desc: 'For projects that tackle real human problems — accessibility, community, education, or anything beyond that.', image: '/assets/tracks/socialimpact.png', prize: '$300' },
+  { name: 'Best Agent for Prediction Markets', desc: 'For the most capable autonomous agent operating in prediction markets — reasoning, betting, and adapting.', image: '/assets/tracks/predictionmarket.png', prize: '$300' },
 ];
 
 const AWARDS: Item[] = [
-  { name: 'Most Uncommon', desc: 'For the project that breaks the mold — weird, wild, and unexpected in ways that redefine what is possible.', image: '/assets/tracks/mostuncommon.png' },
-  { name: 'Best Use of ElevenLabs', desc: 'For the most creative use of ElevenLabs voice technology — bringing characters, interfaces, or stories to life.', image: '/assets/tracks/elevenlabs.png' },
-  { name: 'Best Use of Snowflake', desc: 'For the most clever application of Snowflake data infrastructure — turning raw data into something insightful.', image: '/assets/tracks/snowflake.png' },
+  { name: 'Most Uncommon', desc: 'For the project that breaks the mold — weird, wild, and unexpected in ways that redefine what is possible.', image: '/assets/tracks/mostuncommon.png', prize: '$500' },
+  { name: 'Best Use of ElevenLabs', desc: 'For the most creative use of ElevenLabs voice technology — bringing characters, interfaces, or stories to life.', image: '/assets/tracks/elevenlabs.png', prize: 'ElevenLabs Scale Tier ($330/mo)' },
+  { name: 'Best Use of Snowflake', desc: 'For the most clever application of Snowflake data infrastructure — turning raw data into something insightful.', image: '/assets/tracks/snowflake.png', prize: '6-month access to Snowflake + LinkedIn feature' },
 ];
 
 function TrackPanel({ items, kind, heading }: { items: Item[]; kind: 'track' | 'award'; heading: string }) {
@@ -56,6 +68,7 @@ function TrackPanel({ items, kind, heading }: { items: Item[]; kind: 'track' | '
       </div>
       <h3 className="track-panel-name">{wrapDashes(current.name)}</h3>
       <p className="track-panel-desc">{wrapDashes(current.desc)}</p>
+      <p className="track-panel-prize">{wrapPrize(current.prize)}</p>
       <div className="track-panel-pager">
         <button
           className="track-pager-arrow"
@@ -83,25 +96,21 @@ function TrackPanel({ items, kind, heading }: { items: Item[]; kind: 'track' | '
 }
 
 export default function TracksSection() {
-  const { currentSection } = useNavigation();
-  const isActive = currentSection === 1;
-
   return (
-    <div
-      className={`section-container section-container-centered ${isActive ? 'section-active' : 'section-inactive'}`}
-      aria-hidden={!isActive}
-    >
+    <SectionContainer index={1} className="section-container-centered" bare>
       <div className="tracks-content">
         <img
           src="/assets/branding/tracks_white.png"
           alt="Tracks"
           style={{ width: '280px', maxWidth: '28vw', marginTop: '-4vh', filter: 'brightness(0.2) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5))' }}
         />
-        <div className="track-panels">
-          <TrackPanel items={TRACKS} kind="track" heading="MAIN TRACKS" />
-          <TrackPanel items={AWARDS} kind="award" heading="SPONSORED TRACKS" />
+        <div className="tracks-scroll">
+          <div className="track-panels">
+            <TrackPanel items={TRACKS} kind="track" heading="MAIN TRACKS" />
+            <TrackPanel items={AWARDS} kind="award" heading="SPONSORED TRACKS" />
+          </div>
         </div>
       </div>
-    </div>
+    </SectionContainer>
   );
 }

@@ -7,7 +7,6 @@ function wrapDashes(s: string) {
 }
 
 export default function FAQSection() {
-  // Replace with actual FAQ content
   const faqs = [
     { q: 'When and where is it?', a: 'May 16 – 17th @ UChicago. Location will be sent out to accepted applicants!' },
     { q: 'Who can participate?', a: 'Any university student — undergraduate or graduate. No prior hackathon experience needed.' },
