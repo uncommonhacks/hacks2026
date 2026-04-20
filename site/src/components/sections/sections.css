@@ -569,9 +569,17 @@
     margin-top: -1vh !important;
   }
 
-  /* FAQ — tighter fonts for phone widths */
+  /* FAQ — tighter fonts for phone widths.
+     Extra right padding clears the side-nav dots, and direction: rtl flips
+     the scrollbar to the left so an expanded item's scroll track doesn't
+     collide with the side-nav either. */
   .faq-scroll {
     max-height: 62vh;
+    padding-right: 3rem;
+    direction: rtl;
+  }
+  .faq-scroll > * {
+    direction: ltr;
   }
   .faq-item {
     padding: 0.7rem 0;
