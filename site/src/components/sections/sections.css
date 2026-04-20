@@ -617,10 +617,16 @@
     gap: 1rem;
   }
 
-  /* Tracks — widen scroll container, shrink images + type */
+  /* Tracks — widen scroll container, shrink images + type.
+     direction: rtl moves the scrollbar to the left so it doesn't collide
+     with the side-nav dots on the right. Children restore direction: ltr. */
   .tracks-scroll {
     width: 92vw;
     max-height: 72vh;
+    direction: rtl;
+  }
+  .tracks-scroll > * {
+    direction: ltr;
   }
   .track-panels {
     flex-direction: column;
