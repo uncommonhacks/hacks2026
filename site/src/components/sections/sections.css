@@ -530,27 +530,6 @@
   box-shadow: 0 0 9px rgba(60, 130, 200, 0.55);
 }
 
-@media (max-width: 760px) {
-  .tracks-scroll {
-    width: 65vw;
-    max-height: 78vh;
-  }
-  .track-panels {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    gap: clamp(2.4rem, 6vw, 3.6rem);
-    padding-bottom: 2rem;
-  }
-  .track-panel--award .track-panel-name {
-    margin-top: 0;
-  }
-  .track-panel-desc {
-    min-height: 4em;
-    max-width: 30ch;
-  }
-}
-
 /* Hero about — flows directly below the logo, breaks out of section-inner width */
 .hero-about {
   position: relative;
@@ -581,20 +560,198 @@
   font-size: clamp(1.2rem, min(5.6vmin, 5.5vh), 5.6rem);
 }
 
+@media (max-width: 760px) {
+  /* Section title images — bump from ~28vw up so they read on phones.
+     Override inline margin-top (-4vh/-6vh) so they don't clip when padding shrinks. */
+  .section-title-img {
+    max-width: 46vw !important;
+    width: auto !important;
+    margin-top: -1vh !important;
+  }
+
+  /* FAQ — tighter fonts for phone widths */
+  .faq-scroll {
+    max-height: 62vh;
+  }
+  .faq-item {
+    padding: 0.7rem 0;
+  }
+  .faq-item summary {
+    font-size: 1.15rem;
+  }
+  .faq-item p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* Sponsors — shrink logos + headline so grid fits */
+  .section-inner .sponsor-headline {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+  }
+  .sponsor-logos {
+    gap: 1.1rem 1.4rem;
+    max-width: 100%;
+  }
+  .sponsor-logo {
+    height: 46px;
+    width: 120px;
+  }
+  .section-inner .sponsor-cta {
+    font-size: 1.1rem !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Contact — fit CTA and copy to phone width */
+  .contact-section p {
+    font-size: 1.4rem;
+  }
+  .contact-section .contact-links a {
+    font-size: 1.1rem;
+  }
+  .contact-section .cta-button {
+    font-size: 1.35rem;
+    padding: 0.9rem 2.2rem;
+  }
+  .contact-links {
+    gap: 1rem;
+  }
+
+  /* Tracks — widen scroll container, shrink images + type */
+  .tracks-scroll {
+    width: 92vw;
+    max-height: 72vh;
+  }
+  .track-panels {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 1.8rem;
+    padding-bottom: 1.5rem;
+  }
+  .track-panel {
+    padding: 0.3rem 0.4rem;
+  }
+  .track-panel-heading {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+  }
+  .track-panel-square {
+    width: clamp(150px, 48vw, 230px);
+    height: clamp(150px, 48vw, 230px);
+    margin-top: -0.3rem;
+    margin-bottom: -0.3rem;
+  }
+  .track-panel--track .track-panel-square {
+    width: clamp(140px, 44vw, 215px);
+    height: clamp(140px, 44vw, 215px);
+  }
+  .track-panel--award .track-panel-name {
+    margin-top: 0;
+  }
+  .track-panel-name {
+    font-size: 1.25rem;
+  }
+  .track-panel-desc {
+    font-size: 1.05rem;
+    min-height: auto;
+    max-width: 28ch;
+    line-height: 1.35;
+    margin-bottom: 0.4rem;
+  }
+  .track-panel-prize {
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+  .track-panel-pager {
+    gap: 0.6rem;
+    margin-top: 0.35rem;
+  }
+  .track-pager-arrow {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.5rem;
+  }
+  .track-pager-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+  .track-pager-dot-active {
+    width: 1.8rem;
+  }
+
+  /* Hero about — widen on phone, reduce font */
+  .hero-about {
+    width: min(94vw, 620px);
+    padding: 0 0.6rem;
+    margin-top: clamp(1rem, 3.5vh, 2.5rem);
+  }
+  .hero-about p {
+    font-size: clamp(0.95rem, 4.2vw, 1.45rem);
+    line-height: 1.25;
+  }
+  .hero-about .hero-date {
+    font-size: clamp(1.1rem, 5vw, 1.65rem);
+  }
+}
+
 @media (max-width: 600px) {
   .section-container {
-    padding-top: 5vh;
+    padding-top: 4vh;
   }
 
   .section-inner {
-    padding: 1.2rem;
+    padding: 1rem;
+    width: 94%;
   }
 
   .section-inner h2 {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .section-inner p {
-    font-size: 1.75rem;
+    font-size: 1.15rem;
+  }
+
+  /* Tighter copy for the smallest phones */
+  .hero-about {
+    width: 96vw;
+    padding: 0 0.3rem;
+  }
+  .hero-about p {
+    font-size: clamp(0.9rem, 4vw, 1.25rem);
+  }
+  .hero-about .hero-date {
+    font-size: clamp(1rem, 4.6vw, 1.4rem);
+  }
+
+  .section-title-img {
+    max-width: 52vw !important;
+  }
+
+  .faq-item summary {
+    font-size: 1.05rem;
+  }
+  .faq-item p {
+    font-size: 0.95rem;
+  }
+
+  .sponsor-logo {
+    height: 40px;
+    width: 100px;
+  }
+  .sponsor-logos {
+    gap: 0.9rem 1.2rem;
+  }
+  .section-inner .sponsor-headline {
+    font-size: 1.2rem;
+  }
+
+  .contact-section p {
+    font-size: 1.2rem;
+  }
+  .contact-section .cta-button {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.8rem;
   }
 }

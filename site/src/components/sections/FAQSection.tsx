@@ -18,6 +18,7 @@ export default function FAQSection() {
   return (
     <SectionContainer index={3}>
       <img
+        className="section-title-img"
         src="/assets/branding/faq_white.png"
         alt="FAQ"
         style={{ width: '180px', maxWidth: '28vw', marginTop: '-6vh', filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5))' }}

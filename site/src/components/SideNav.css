@@ -97,6 +97,19 @@
   }
 }
 
+@media (max-width: 760px) {
+  .side-nav {
+    right: 1rem;
+  }
+  .side-nav-list {
+    gap: 1rem;
+  }
+  .side-nav-bubble {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .side-nav {
     animation: none;

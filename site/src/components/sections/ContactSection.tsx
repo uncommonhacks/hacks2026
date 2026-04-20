@@ -4,6 +4,7 @@ export default function ContactSection() {
   return (
     <SectionContainer index={4}>
       <img
+        className="section-title-img"
         src="/assets/branding/contact_white.png"
         alt="Contact"
         style={{ width: '300px', maxWidth: '28vw', marginTop: '-4vh', filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5))' }}

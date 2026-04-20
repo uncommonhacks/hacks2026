@@ -100,6 +100,7 @@ export default function TracksSection() {
     <SectionContainer index={1} className="section-container-centered" bare>
       <div className="tracks-content">
         <img
+          className="section-title-img"
           src="/assets/branding/tracks_white.png"
           alt="Tracks"
           style={{ width: '280px', maxWidth: '28vw', marginTop: '-4vh', filter: 'brightness(0.2) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5))' }}

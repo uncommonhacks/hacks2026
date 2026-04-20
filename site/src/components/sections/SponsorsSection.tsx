@@ -13,6 +13,7 @@ export default function SponsorsSection() {
   return (
     <SectionContainer index={2}>
       <img
+        className="section-title-img"
         src="/assets/branding/sponsors_white.png"
         alt="Sponsors"
         style={{ width: '330px', maxWidth: '28vw', marginTop: '-6vh', filter: 'brightness(0.15) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5))' }}
