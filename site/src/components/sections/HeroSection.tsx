@@ -20,6 +20,14 @@ export default function HeroSection() {
           marginBottom: '0',
         }}
       />
+      <a
+        href="https://forms.gle/hBwPZKyBmq4nfsh28"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="cta-button hero-cta"
+      >
+        Apply Now
+      </a>
       <div className="hero-about">
         <p>
           UChicago&apos;s flagship hackathon <span className="thin-dash">—</span> 170 builders, 24 hours, the wildest

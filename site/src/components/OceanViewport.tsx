@@ -3,7 +3,6 @@ import DecorationLayer from './DecorationLayer';
 import SceneDecorations from './SceneDecorations';
 import AmbientEffects from './AmbientEffects';
 import SideNav from './SideNav';
-import ProgressScrollbar from './ProgressScrollbar';
 import HeroSection from './sections/HeroSection';
 import TracksSection from './sections/TracksSection';
 import SponsorsSection from './sections/SponsorsSection';
@@ -29,7 +28,6 @@ export default function OceanViewport() {
       <ContactSection />
 
       <SideNav />
-      <ProgressScrollbar />
     </div>
   );
 }

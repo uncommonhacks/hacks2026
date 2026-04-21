@@ -530,6 +530,14 @@
   box-shadow: 0 0 9px rgba(60, 130, 200, 0.55);
 }
 
+/* Hero CTA — sits between the logo and the hero-about text */
+.section-inner .cta-button.hero-cta {
+  display: inline-block;
+  margin-top: clamp(3rem, 8vh, 7rem);
+  font-size: clamp(1.5rem, 2.6vw, 2.8rem);
+  padding: 1.15rem 3.2rem;
+}
+
 /* Hero about — flows directly below the logo, breaks out of section-inner width */
 .hero-about {
   position: relative;
@@ -537,7 +545,7 @@
   transform: translateX(-50%);
   width: min(67vw, 1400px);
   max-width: none;
-  margin-top: clamp(2rem, 8vh, 8rem);
+  margin-top: clamp(1.5rem, 5vh, 5rem);
   padding: 0 2.2rem;
   text-align: center;
 }
@@ -693,12 +701,19 @@
     width: 1.8rem;
   }
 
+  /* Hero CTA — scaled down for phones */
+  .section-inner .cta-button.hero-cta {
+    font-size: 1.3rem;
+    padding: 0.85rem 2.3rem;
+    margin-top: clamp(2.5rem, 6vh, 4rem);
+  }
+
   /* Hero about — narrow container so text doesn't reach the side-nav dots,
      with large fonts scaled up to fill the vertical space. */
   .hero-about {
     width: min(calc(100vw - 120px), 620px);
     padding: 0 0.6rem;
-    margin-top: clamp(1rem, 3.5vh, 2.5rem);
+    margin-top: clamp(0.8rem, 2.5vh, 1.8rem);
   }
   .hero-about p {
     font-size: clamp(1.5rem, 6.4vw, 2.2rem);

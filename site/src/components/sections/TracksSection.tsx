@@ -23,12 +23,11 @@ function wrapPrize(s: string) {
 type Item = { name: string; desc: string; image: string; prize: string };
 
 const TRACKS: Item[] = [
-  { name: 'Best Overall', desc: 'Awarded to the most impressive project across all dimensions — vision, execution, and pure originality.', image: '/assets/tracks/bestoverall.png', prize: '$1,000 + ElevenLabs Pro Tier ($99/mo)' },
-  { name: 'Best Use of Real-Time Data', desc: 'For the project that turns live data streams into something useful or beautiful — built to react instantly.', image: '/assets/tracks/realdata.png', prize: '$300' },
-  { name: 'Best Inference', desc: 'For the team pushing the limits of how models reason at the edge — speed, efficiency, scale, and novelty.', image: '/assets/tracks/inference.png', prize: '$300' },
-  { name: 'Best Game Design', desc: 'For the most polished, playable, and inventive game built over the weekend — fresh, fun, and unforgettable.', image: '/assets/tracks/gamedesign.png', prize: '$300' },
-  { name: 'Best Social Impact', desc: 'For projects that tackle real human problems — accessibility, community, education, or anything beyond that.', image: '/assets/tracks/socialimpact.png', prize: '$300' },
-  { name: 'Best Agent for Prediction Markets', desc: 'For the most capable autonomous agent operating in prediction markets — reasoning, betting, and adapting.', image: '/assets/tracks/predictionmarket.png', prize: '$300' },
+  { name: 'Zero Trust', desc: 'For the sharpest hack in security — breaking systems, building defenses, and rethinking how we protect what matters.', image: '/assets/tracks/realdata.png', prize: '$800' },
+  { name: 'Inference', desc: 'For the team pushing the limits of how models reason at the edge — speed, efficiency, scale, and novelty.', image: '/assets/tracks/inference.png', prize: '$1000' },
+  { name: 'Game Design', desc: 'For the most polished, playable, and inventive game built over the weekend — fresh, fun, and unforgettable.', image: '/assets/tracks/gamedesign.png', prize: '$800' },
+  { name: 'Social Impact', desc: 'For projects that tackle real human problems — accessibility, community, education, or anything beyond that.', image: '/assets/tracks/socialimpact.png', prize: '$800' },
+  { name: 'Agents for Prediction Markets', desc: 'For the most capable autonomous agent operating in prediction markets — reasoning, betting, and adapting.', image: '/assets/tracks/predictionmarket.png', prize: '$800' },
 ];
 
 const AWARDS: Item[] = [
