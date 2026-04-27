@@ -15,7 +15,7 @@ export default function HeroSection() {
           display: 'block',
           position: 'relative',
           left: '50%',
-          transform: 'translateX(-50%)',
+          transform: 'translateX(calc(-50% - 14px))',
           marginTop: 'clamp(-90px, -4vmin, -1rem)',
           marginBottom: '0',
         }}
@@ -36,6 +36,7 @@ export default function HeroSection() {
         <p className="hero-date">
           May 16 <span className="thin-dash">—</span> 17, 2026. Don&apos;t just watch <span className="thin-dash">—</span> build something uncommon.
         </p>
+        <p className="hero-schedule-soon">Schedule coming soon...</p>
       </div>
     </SectionContainer>
   );
