@@ -23,6 +23,7 @@ const tier3RowA: Sponsor[] = [
 const tier3RowB: Sponsor[] = [
   { name: 'Vibeflow', file: 'vibeflow_logo.png' },
   { name: 'Tower Research Capital', file: 'Tower_Research_Capital_Logo.png' },
+  { name: 'Cursor', file: 'cursor-logo.png' },
 ];
 
 export default function SponsorsSection() {
