@@ -5,7 +5,7 @@ type Sponsor = { name: string; file: string };
 const tier1: Sponsor[] = [
   { name: 'Tensormesh', file: 'Tensormesh_Logo.png' },
   { name: 'Sigma Lab', file: 'SIGMA_LAB_LOGO.png' },
-  { name: 'Wafer', file: 'wafer_logo.png' },
+  { name: 'Wafer', file: 'wafer-logo.svg' },
 ];
 
 const tier2: Sponsor[] = [
@@ -36,24 +36,26 @@ export default function SponsorsSection() {
       />
       <p className="sponsor-headline">Uncommon Hacks is made possible by our generous sponsors.</p>
 
-      <div className="sponsor-tier">
-        {[
-          { tier: 'lg', items: tier1 },
-          { tier: 'md', items: tier2 },
-          { tier: 'sm', items: tier3RowA },
-          { tier: 'sm', items: tier3RowB },
-        ].map((row, rowIdx) => (
-          <div key={rowIdx} className={`sponsor-logos sponsor-logos--${row.tier}`}>
-            {row.items.map((s) => (
-              <div key={s.file} className={`sponsor-logo sponsor-logo--${row.tier}`}>
-                <img src={`/assets/sponsors/${s.file}`} alt={s.name} />
-              </div>
-            ))}
-          </div>
-        ))}
+      <div className="sponsors-scroll">
+        <div className="sponsor-tier">
+          {[
+            { tier: 'lg', items: tier1 },
+            { tier: 'md', items: tier2 },
+            { tier: 'sm', items: tier3RowA },
+            { tier: 'sm', items: tier3RowB },
+          ].map((row, rowIdx) => (
+            <div key={rowIdx} className={`sponsor-logos sponsor-logos--${row.tier}`}>
+              {row.items.map((s) => (
+                <div key={s.file} className={`sponsor-logo sponsor-logo--${row.tier}`}>
+                  <img src={`/assets/sponsors/${s.file}`} alt={s.name} />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
 
-      <p className="sponsor-cta" style={{ marginTop: '1.5rem', fontSize: 'clamp(1.6rem, 2.8vw, 3rem)', opacity: 0.8 }}>
+      <p className="sponsor-cta" style={{ marginTop: '0', fontSize: 'clamp(1.6rem, 2.8vw, 3rem)', opacity: 0.8 }}>
         Interested in sponsoring? <a href="mailto:uncommonhacks@gmail.com" style={{ color: '#4fc3f7' }}>Get in touch</a>
       </p>
     </SectionContainer>

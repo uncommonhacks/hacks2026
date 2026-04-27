@@ -38,7 +38,7 @@
   cursor: pointer;
   padding: 0.3rem;
   transition: transform 0.2s;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .side-nav-item:hover {

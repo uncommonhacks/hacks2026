@@ -86,15 +86,14 @@ export const SECTION_SCENES: SectionScene[] = [
       rock({ id: 't-rock-far3', src: R1, bottom: 5, left: 74, width: 17, depth: 'far', opacity: 1, flipX: true }),
       // Mid rocks + seaweed
       rock({ id: 't-rock-mid1', src: R3, bottom: -4, left: -10, width: 31, depth: 'mid', opacity: 1, brightness: 0.85, blueTint: 0.3}),
-      rock({ id: 't-rock-mid2', src: R2, bottom: -2, left: 59, width: 29, depth: 'mid', flipX: true, opacity: 1, brightness: 0.85,  blueTint: 0.3}),
-      rock({ id: 't-rock-far2', src: R3, bottom: -3, left: 55, width: 13, depth: 'mid', opacity: 1}),
+      rock({ id: 't-rock-far2', src: R3, bottom: -3, left: 65, width: 13, depth: 'mid', opacity: 1}),
       { id: 't-seaweed1', src: SEAWEED1, bottom: -3, left: 8,  width: 8, depth: 'mid', animation: 'anim-sway' },
       { id: 't-seaweed2', src: SEAWEED2, bottom: -3, left: 77, width: 8, depth: 'mid', animation: 'anim-sway' },
       { id: 't-seaweed-extra1', src: SEAWEED2, bottom: -3, left: 18, width: 7, depth: 'mid', animation: 'anim-sway', flipX: true },
       { id: 't-seaweed-extra2', src: SEAWEED1, bottom: -3, left: 68, width: 6, depth: 'mid', animation: 'anim-sway' },
       { id: 't-yellow-coral', src: YELLOW_CORAL, bottom: -3, left: 85, width: 7, depth: 'mid' },
       { id: 't-orange-coral', src: ORANGE_CORAL, bottom: -1, left: 25, width: 6, depth: 'mid' },
-      { id: 't-orange-star', src: ORANGE_STAR, bottom: 2, left: 63, width: 4, depth: 'mid' , brightness: 0.8},
+      { id: 't-orange-star', src: ORANGE_STAR, bottom: 2, left: 73, width: 4, depth: 'mid' , brightness: 0.8},
       // Near rocks
       rock({ id: 't-rock-near1', src: R1, bottom: -12, left: -16, width: 37, depth: 'near', opacity: 1 }),
       rock({ id: 't-rock-near2', src: R4, bottom: -13, left: 69, width: 41, depth: 'near', flipX: true, opacity: 1 }),
