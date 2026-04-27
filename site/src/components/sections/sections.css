@@ -170,7 +170,7 @@
   font-size: min(2.6rem, calc((90vw - 4rem) / 28));
   font-weight: 900;
   line-height: 1.4;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   color: #262626;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.654);
   white-space: nowrap;
@@ -228,6 +228,30 @@
   max-width: 1280px;
 }
 
+.sponsors-scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.6rem;
+  width: 100%;
+  pointer-events: auto;
+}
+
+.sponsors-scroll::-webkit-scrollbar {
+  width: 9px;
+}
+.sponsors-scroll::-webkit-scrollbar-track {
+  background: rgba(15, 40, 90, 0.18);
+  border-radius: 5px;
+}
+.sponsors-scroll::-webkit-scrollbar-thumb {
+  background: rgba(15, 40, 90, 0.85);
+  border-radius: 5px;
+}
+.sponsors-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(25, 60, 130, 1);
+}
+
 .sponsor-logos + .sponsor-logos {
   margin-top: 1.4rem;
 }
@@ -257,6 +281,17 @@
 .sponsor-logo:has(img[src$="CareerAdvancementLogo.png"]) {
   width: 230px;
   height: 88px;
+}
+
+.sponsor-logo:has(img[src$="wafer-logo.svg"]) {
+  width: 200px;
+  height: 82px;
+  transform: translate(-14px, -8px);
+}
+
+.sponsor-logo:has(img[src$="SIGMA_LAB_LOGO.png"]) {
+  width: 260px;
+  height: 115px;
 }
 
 .sponsor-logo img[src$="McMaster-Carr_logo.svg.png"],
@@ -383,13 +418,14 @@
 
 .track-panel-heading {
   font-family: 'PhoFont', sans-serif;
-  font-size: clamp(1.55rem, 2.1vw, 2.5rem);
+  font-size: min(2.5rem, calc((35vw - 4rem) / 13));
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #000;
   margin-bottom: clamp(0.3rem, 0.7vw, 0.8rem);
   text-shadow: none;
+  white-space: nowrap;
 }
 
 .track-panel-square {
@@ -773,6 +809,9 @@
     font-size: clamp(1.75rem, 7.4vw, 2.6rem);
     margin-top: 1em;
   }
+  .hero-about .hero-schedule-soon {
+    font-size: clamp(1.3rem, 5.6vw, 1.95rem);
+  }
 }
 
 @media (max-width: 600px) {
@@ -814,6 +853,9 @@
   }
   .hero-about .hero-date {
     font-size: clamp(1.55rem, 7vw, 2.2rem);
+  }
+  .hero-about .hero-schedule-soon {
+    font-size: clamp(1.15rem, 5.4vw, 1.7rem);
   }
 
   .section-title-img {
