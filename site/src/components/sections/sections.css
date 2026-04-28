@@ -287,6 +287,7 @@
   width: 200px;
   height: 82px;
   transform: translate(-14px, -8px);
+  filter: drop-shadow(0 0 2px rgba(251, 251, 251, 0.465));
 }
 
 .sponsor-logo:has(img[src$="SIGMA_LAB_LOGO.png"]) {
@@ -295,12 +296,16 @@
 }
 
 .sponsor-logo img[src$="McMaster-Carr_logo.svg.png"],
-.sponsor-logo img[src$="CareerAdvancementLogo.png"],
 .sponsor-logo img[src$="Tower_Research_Capital_Logo.png"] {
-  filter:
+  filter: drop-shadow(0 0 2px rgba(200, 200, 200, 0.631));
+  /* filter:
     drop-shadow(0 0 6px rgba(255, 255, 255, 0.9))
     drop-shadow(0 0 14px rgba(255, 255, 255, 0.55))
-    drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+    drop-shadow(0 0 5px rgba(0, 0, 0, 0.4)); */
+}
+
+.sponsor-logo img[src$="CareerAdvancementLogo.png"]{
+  filter: drop-shadow(0 0 2px rgb(200, 200, 200));
 }
 
 .sponsor-placeholder {
