@@ -21,7 +21,6 @@ const tier3RowA: Sponsor[] = [
 ];
 
 const tier3RowB: Sponsor[] = [
-  { name: 'Vibeflow', file: 'VibeFlow_Words_Logo.png' },
   { name: 'Tower Research Capital', file: 'Tower_Research_Capital_Logo.png' },
   { name: 'Cursor', file: 'cursor-logo.png' },
 ];
