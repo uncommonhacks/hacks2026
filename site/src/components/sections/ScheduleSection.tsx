@@ -1,17 +1,51 @@
+import { useEffect, useState } from 'react';
 import SectionContainer from './SectionContainer';
 
-type Item = { time: string; event: string; details?: string };
+interface SpeakerDetails {
+  name: string;
+  affiliation: string;
+  imageSrc: string;
+  bio: string;
+  talkTitle: string;
+  talkDescription: string;
+}
+
+type Item = { time: string; event: string; details?: SpeakerDetails | string };
+
+const haifengDetails: SpeakerDetails = {
+  name: 'Haifeng Xu',
+  affiliation: 'Assistant Professor in the Department of Computer Science at UChicago',
+  imageSrc: '/assets/speakers/haifeng.png',
+  bio:
+    'Haifeng Xu is an Assistant Professor in the Department of Computer Science at the University of Chicago, where he directs the Strategic IntelliGence for Machine Agents (SIGMA) Lab. He is also an AI2050 Early Career Fellow and a part-time staff scientist at Google Research. His research pushes AI beyond recognition-level capabilities toward agency-level intelligence — reasoning, communication, and strategic decision-making in multi-agent environments — and underpins recent work on benchmarks and platforms for evaluating AI judgment under uncertainty.',
+  talkTitle: 'Forecasting as a New Frontier of AI Intelligence',
+  talkDescription:
+    "Thus far, AI's reasoning capabilities, i.e., AI intelligence, has been mostly measured by math (or science more generally) and coding. In this talk, Professor Xu will discuss why forecasting should and will be a new frontier of AI intelligence. He will share evidences across different spaces, from academic research findings, to commercial potentials, and to efforts from frontier labs, various startups in stealth as well as non-profits.",
+};
+
+const sarathriDetails: SpeakerDetails = {
+  name: 'Sarathri Balakrishnan',
+  affiliation: 'Senior Solutions Architect at Snowflake',
+  imageSrc: '/assets/speakers/sarathri_balakrishnan.jpg',
+  bio:
+    "Sarathri Balakrishnan is a Senior Solutions Architect at Snowflake, where she partners with enterprise teams to design and ship production-grade data and AI/ML systems on Snowflake's platform. She brings hands-on experience across industry verticals and works closely with customers and engineers to bridge the gap between research-grade ML and the realities of deploying it inside a modern data stack.",
+  talkTitle: 'Leading edge Data and AI stack: Getting to know Snowflake and its AI/ML capabilities',
+  talkDescription:
+    "Thus far, most ML and AI learning has lived in the classroom and on benchmark leaderboards. In this talk, Sarathri Balakrishnan will move beyond the classroom and walk through how real-world customers deploy ML and AI solutions using Snowflake. She will share professional insights and career pathing advice across industry use cases — covering deployment patterns, the trade-offs that shape production AI systems, and the day-to-day decisions that turn a model into a shipped product.",
+};
+
+const PLACEHOLDER = 'Details coming soon.';
 
 const day1: Item[] = [
   { time: '9:00 AM', event: 'Doors open, check-in, team formation' },
   { time: '10:15 AM', event: 'Opening ceremony' },
   { time: '10:45 AM', event: 'Hacking begins' },
   { time: '12:00 PM', event: 'Lunch' },
-  { time: '2:00 PM', event: 'Speaker: Prof. Haifeng Xu', details: 'Details coming soon.' },
-  { time: '3:00 PM', event: 'Workshop: Wafer', details: 'Details coming soon.' },
-  { time: '3:30 PM', event: 'Speaker: Tensormesh', details: 'Details coming soon.' },
-  { time: '4:00 PM', event: 'Workshop: Laminar', details: 'Details coming soon.' },
-  { time: '4:30 PM', event: 'Speaker: Sarathri Balakrishnan (Snowflake)', details: 'Details coming soon.' },
+  { time: '2:00 PM', event: 'Speaker: Prof. Haifeng Xu', details: haifengDetails },
+  { time: '3:00 PM', event: 'Workshop: Wafer', details: PLACEHOLDER },
+  { time: '3:30 PM', event: 'Speaker: Tensormesh', details: PLACEHOLDER },
+  { time: '4:00 PM', event: 'Workshop: Laminar', details: PLACEHOLDER },
+  { time: '4:30 PM', event: 'Speaker: Sarathri Balakrishnan (Snowflake)', details: sarathriDetails },
   { time: '6:00 PM', event: 'Dinner' },
   { time: '7:30 PM', event: 'Typing contest' },
   { time: '8:30 PM', event: 'Quizbowl' },
@@ -34,7 +68,110 @@ function wrapDashes(s: string) {
   );
 }
 
-function Column({ heading, subheading, items, scrollHint }: { heading: string; subheading: string; items: Item[]; scrollHint?: boolean }) {
+function SpeakerModal({ details, onClose }: { details: SpeakerDetails; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <div className="speaker-modal-backdrop" onClick={onClose}>
+      <div
+        className="speaker-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="speaker-modal-name"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          type="button"
+          className="speaker-modal-close"
+          onClick={onClose}
+          aria-label="Close speaker details"
+        >
+          ×
+        </button>
+        <h2 id="speaker-modal-name" className="speaker-modal-name">
+          {details.name}{' '}
+          <span className="speaker-modal-affiliation">({details.affiliation})</span>
+        </h2>
+        <div className="speaker-modal-body">
+          <div className="speaker-modal-left">
+            <img
+              src={details.imageSrc}
+              alt={details.name}
+              className="speaker-modal-photo"
+            />
+            <p className="speaker-modal-bio">{details.bio}</p>
+          </div>
+          <div className="speaker-modal-right">
+            <h3 className="speaker-modal-talk-title">
+              Talk title: {details.talkTitle}
+            </h3>
+            <p className="speaker-modal-description">{details.talkDescription}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PlaceholderModal({ event, onClose }: { event: string; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <div className="speaker-modal-backdrop" onClick={onClose}>
+      <div
+        className="speaker-modal speaker-modal--placeholder"
+        role="dialog"
+        aria-modal="true"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          type="button"
+          className="speaker-modal-close"
+          onClick={onClose}
+          aria-label="Close details"
+        >
+          ×
+        </button>
+        <h2 className="speaker-modal-name">{event}</h2>
+        <p className="speaker-modal-description">Details coming soon.</p>
+      </div>
+    </div>
+  );
+}
+
+function Column({
+  heading,
+  subheading,
+  items,
+  scrollHint,
+  onOpenDetails,
+}: {
+  heading: string;
+  subheading: string;
+  items: Item[];
+  scrollHint?: boolean;
+  onOpenDetails: (it: Item) => void;
+}) {
   return (
     <div className="schedule-day">
       {scrollHint && <span className="schedule-scroll-hint">Scroll!</span>}
@@ -48,16 +185,14 @@ function Column({ heading, subheading, items, scrollHint }: { heading: string; s
             <span className="schedule-event">
               {wrapDashes(it.event)}
               {it.details && (
-                <span className="schedule-detail-wrap">
-                  <button
-                    type="button"
-                    className="schedule-detail-btn"
-                    aria-label={`Details for ${it.event}`}
-                  >
-                    Details
-                  </button>
-                  <span role="tooltip" className="schedule-detail-tip">{it.details}</span>
-                </span>
+                <button
+                  type="button"
+                  className="schedule-detail-btn"
+                  onClick={() => onOpenDetails(it)}
+                  aria-label={`Details for ${it.event}`}
+                >
+                  Details
+                </button>
               )}
             </span>
           </li>
@@ -68,6 +203,8 @@ function Column({ heading, subheading, items, scrollHint }: { heading: string; s
 }
 
 export default function ScheduleSection() {
+  const [active, setActive] = useState<Item | null>(null);
+
   return (
     <SectionContainer index={1}>
       <img
@@ -77,10 +214,16 @@ export default function ScheduleSection() {
       />
       <div className="schedule-scroll">
         <div className="schedule-grid">
-          <Column heading="Day 1" subheading="Saturday, May 16" items={day1} scrollHint />
-          <Column heading="Day 2" subheading="Sunday, May 17" items={day2} />
+          <Column heading="Day 1" subheading="Saturday, May 16" items={day1} scrollHint onOpenDetails={setActive} />
+          <Column heading="Day 2" subheading="Sunday, May 17" items={day2} onOpenDetails={setActive} />
         </div>
       </div>
+      {active && typeof active.details !== 'string' && active.details && (
+        <SpeakerModal details={active.details} onClose={() => setActive(null)} />
+      )}
+      {active && typeof active.details === 'string' && (
+        <PlaceholderModal event={active.event} onClose={() => setActive(null)} />
+      )}
     </SectionContainer>
   );
 }
