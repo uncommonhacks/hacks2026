@@ -70,45 +70,46 @@ export default function AmbientEffects() {
         </div>
       )}
 
-      {/* Bubbles — only underwater (Tracks onward); skipped on Schedule for legibility */}
-      <div className="bubbles-container" style={{
-        opacity: currentSection >= 2 ? 1 : 0,
-        transition: 'opacity 0.7s ease',
-      }}>
-        {bubbles.map(b => (
-          <div
-            key={b.id}
-            className="bubble"
-            style={{
-              left: `${b.left}%`,
-              width: `${b.size}px`,
-              height: `${b.size}px`,
-              animationDuration: `${b.duration}s`,
-              animationDelay: `${b.delay}s`,
-              opacity: b.opacity * (0.5 + depthFactor * 0.5),
-            }}
-          />
-        ))}
-      </div>
+      {/* Bubbles — only underwater (Tracks onward). Schedule (idx 1) is fully suppressed. */}
+      {currentSection >= 2 && (
+        <div className="bubbles-container">
+          {bubbles.map(b => (
+            <div
+              key={b.id}
+              className="bubble"
+              style={{
+                left: `${b.left}%`,
+                width: `${b.size}px`,
+                height: `${b.size}px`,
+                animationDuration: `${b.duration}s`,
+                animationDelay: `${b.delay}s`,
+                opacity: b.opacity * (0.5 + depthFactor * 0.5),
+              }}
+            />
+          ))}
+        </div>
+      )}
 
-      {/* Particles */}
-      <div className="particles-container">
-        {particles.map(p => (
-          <div
-            key={p.id}
-            className="particle"
-            style={{
-              left: `${p.left}%`,
-              top: `${p.top}%`,
-              width: `${p.size}px`,
-              height: `${p.size}px`,
-              animationDuration: `${p.duration}s`,
-              animationDelay: `${p.delay}s`,
-              opacity: 0.2 + depthFactor * 0.3,
-            }}
-          />
-        ))}
-      </div>
+      {/* Particles — also suppressed on Schedule (they read as small bubbles) */}
+      {currentSection !== 1 && (
+        <div className="particles-container">
+          {particles.map(p => (
+            <div
+              key={p.id}
+              className="particle"
+              style={{
+                left: `${p.left}%`,
+                top: `${p.top}%`,
+                width: `${p.size}px`,
+                height: `${p.size}px`,
+                animationDuration: `${p.duration}s`,
+                animationDelay: `${p.delay}s`,
+                opacity: 0.2 + depthFactor * 0.3,
+              }}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
