@@ -38,8 +38,9 @@ function Column({ heading, subheading, items, scrollHint }: { heading: string; s
   return (
     <div className="schedule-day">
       {scrollHint && <span className="schedule-scroll-hint">Scroll!</span>}
-      <h3 className="schedule-day-heading">{heading}</h3>
-      <p className="schedule-day-sub">{subheading}</p>
+      <h3 className="schedule-day-heading">
+        {heading}: <span className="schedule-day-sub">{subheading}</span>
+      </h3>
       <ul className="schedule-list">
         {items.map((it, i) => (
           <li key={i} className="schedule-row">
