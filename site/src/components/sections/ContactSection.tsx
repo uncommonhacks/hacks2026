@@ -2,7 +2,7 @@ import SectionContainer from './SectionContainer';
 
 export default function ContactSection() {
   return (
-    <SectionContainer index={4}>
+    <SectionContainer index={5}>
       <img
         className="section-title-img"
         src="/assets/branding/contact_white.png"

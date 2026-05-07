@@ -70,9 +70,9 @@ export const SECTION_SCENES: SectionScene[] = [
     ],
   },
 
-  // === TRACKS (index 1) — Mid water ===
+  // === TRACKS (index 2) — Mid water ===
   {
-    sectionIndex: 1,
+    sectionIndex: 2,
     decorations: [
       // Shark swimming across
       { id: 't-shark', src: SHARK, bottom: 52, left: 52, width: 30, depth: 'mid', animation: 'anim-swim' },
@@ -102,9 +102,9 @@ export const SECTION_SCENES: SectionScene[] = [
     ],
   },
 
-  // === SPONSORS (index 2) — Deep water ===
+  // === SPONSORS (index 3) — Deep water ===
   {
-    sectionIndex: 2,
+    sectionIndex: 3,
     decorations: [
       // Deep creatures — bigger squid, prominent clam
       { id: 's-squid',   src: SQUID,   bottom: 58, left: 72, width: 22, depth: 'mid', animation: 'anim-float' },
@@ -130,9 +130,9 @@ export const SECTION_SCENES: SectionScene[] = [
     ],
   },
 
-  // === FAQ (index 3) — Abyss ===
+  // === FAQ (index 4) — Abyss ===
   {
-    sectionIndex: 3,
+    sectionIndex: 4,
     decorations: [
       // Purple squid drifting (bigger)
       { id: 'f-psquid', src: P_SQUID, bottom: 55, left: 70, width: 20, depth: 'mid', animation: 'anim-float', brightness: 0.7},
@@ -154,9 +154,9 @@ export const SECTION_SCENES: SectionScene[] = [
     ],
   },
 
-  // === CONTACT (index 4) — Deep abyss ===
+  // === CONTACT (index 5) — Deep abyss ===
   {
-    sectionIndex: 4,
+    sectionIndex: 5,
     decorations: [
       // Octopus — deep cave creature, shifted right to clear the centered CTA
       { id: 'c-octopus', src: OCTOPUS, bottom: 25, left: 50, width: 30, depth: 'mid', animation: 'anim-float', opacity: 1},

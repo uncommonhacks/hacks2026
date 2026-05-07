@@ -99,7 +99,7 @@ function TrackPanel({ items, kind, heading }: { items: Item[]; kind: 'track' | '
 
 export default function TracksSection() {
   return (
-    <SectionContainer index={1} className="section-container-centered" bare>
+    <SectionContainer index={2} className="section-container-centered" bare>
       <div className="tracks-content">
         <img
           className="section-title-img"

@@ -16,7 +16,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <SectionContainer index={3}>
+    <SectionContainer index={4}>
       <img
         className="section-title-img"
         src="/assets/branding/faq_white.png"

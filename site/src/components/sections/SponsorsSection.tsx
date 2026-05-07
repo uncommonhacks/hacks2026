@@ -27,7 +27,7 @@ const tier3RowB: Sponsor[] = [
 
 export default function SponsorsSection() {
   return (
-    <SectionContainer index={2}>
+    <SectionContainer index={3}>
       <img
         className="section-title-img"
         src="/assets/branding/sponsors_white.png"

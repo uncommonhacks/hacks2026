@@ -23,11 +23,11 @@ export default function OceanViewport() {
       <AmbientEffects />
 
       <HeroSection />
+      <ScheduleSection />
       <TracksSection />
       <SponsorsSection />
       <FAQSection />
       <ContactSection />
-      <ScheduleSection />
 
       <SideNav />
     </div>

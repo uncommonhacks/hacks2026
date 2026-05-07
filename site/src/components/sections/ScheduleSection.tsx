@@ -47,7 +47,7 @@ function Column({ heading, subheading, items }: { heading: string; subheading: s
 
 export default function ScheduleSection() {
   return (
-    <SectionContainer index={5}>
+    <SectionContainer index={1}>
       <img
         className="section-title-img"
         src="/assets/branding/schedule_white.png"
