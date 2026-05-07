@@ -887,7 +887,7 @@
     gap: 1.4rem;
   }
   .schedule-day-heading {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
   .schedule-row {
     font-size: 1.1rem;
@@ -1055,17 +1055,17 @@
 
 .schedule-day-heading {
   font-family: 'PhoFont', sans-serif;
-  font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: 900;
+  font-size: clamp(1.4rem, 2.1vw, 2rem);
+  font-weight: 800;
   margin: 0 0 0.6rem;
   color: #0a0a0a;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
 }
 
 .schedule-day-heading .schedule-day-sub {
   font-family: 'PhoFont', sans-serif;
-  font-size: 0.7em;
+  font-size: 1em;
   font-weight: 700;
   color: #1a1a1a;
   letter-spacing: 0.02em;
