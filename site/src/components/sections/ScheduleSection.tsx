@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import SectionContainer from './SectionContainer';
 
 interface SpeakerDetails {
@@ -81,7 +82,7 @@ function SpeakerModal({ details, onClose }: { details: SpeakerDetails; onClose: 
     };
   }, [onClose]);
 
-  return (
+  return createPortal(
     <div className="speaker-modal-backdrop" onClick={onClose}>
       <div
         className="speaker-modal"
@@ -119,7 +120,8 @@ function SpeakerModal({ details, onClose }: { details: SpeakerDetails; onClose: 
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
@@ -136,7 +138,7 @@ function PlaceholderModal({ event, onClose }: { event: string; onClose: () => vo
     };
   }, [onClose]);
 
-  return (
+  return createPortal(
     <div className="speaker-modal-backdrop" onClick={onClose}>
       <div
         className="speaker-modal speaker-modal--placeholder"
@@ -155,7 +157,8 @@ function PlaceholderModal({ event, onClose }: { event: string; onClose: () => vo
         <h2 className="speaker-modal-name">{event}</h2>
         <p className="speaker-modal-description">Details coming soon.</p>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
