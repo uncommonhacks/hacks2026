@@ -906,21 +906,24 @@
 /* Schedule */
 .schedule-title-img {
   display: block;
-  width: 330px;
-  max-width: 28vw;
-  aspect-ratio: 2063 / 995;
+  width: 220px;
+  max-width: 22vw;
+  aspect-ratio: 1961 / 892;
   height: auto;
   margin: 0 auto;
   filter: brightness(0.1) drop-shadow(0 4px 10px rgba(255, 255, 255, 0.45));
 }
 
 .schedule-scroll {
-  margin-top: 8vh;
+  margin-top: 6vh;
   max-height: 60vh;
-  width: min(95vw, 1100px);
+  width: min(92vw, 1100px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding-right: 0.6rem;
+  padding: 0 0.6rem;
   pointer-events: auto;
 }
 
