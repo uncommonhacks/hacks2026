@@ -1128,7 +1128,7 @@
 
 .speaker-modal-bio {
   margin: 0;
-  font-size: clamp(1rem, 1.15vw, 1.15rem);
+  font-size: clamp(1.2rem, 1.4vw, 1.4rem);
   font-weight: 500;
   line-height: 1.5;
   color: #1a2942;
@@ -1144,7 +1144,7 @@
 
 .speaker-modal-talk-title {
   margin: 0;
-  font-size: clamp(1.2rem, 1.45vw, 1.45rem);
+  font-size: clamp(1.5rem, 1.7vw, 1.7rem);
   font-weight: 800;
   color: #08305a;
   line-height: 1.3;
@@ -1155,9 +1155,9 @@
 
 .speaker-modal-description {
   margin: 0;
-  font-size: clamp(1.2rem, 1.45vw, 1.45rem);
+  font-size: clamp(2.2rem, 2.6vw, 2.6rem);
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.4;
   color: #1a2942;
   text-shadow: none;
 }
