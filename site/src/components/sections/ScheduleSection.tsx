@@ -34,9 +34,10 @@ function wrapDashes(s: string) {
   );
 }
 
-function Column({ heading, subheading, items }: { heading: string; subheading: string; items: Item[] }) {
+function Column({ heading, subheading, items, scrollHint }: { heading: string; subheading: string; items: Item[]; scrollHint?: boolean }) {
   return (
     <div className="schedule-day">
+      {scrollHint && <span className="schedule-scroll-hint">Scroll!</span>}
       <h3 className="schedule-day-heading">{heading}</h3>
       <p className="schedule-day-sub">{subheading}</p>
       <ul className="schedule-list">
@@ -52,7 +53,7 @@ function Column({ heading, subheading, items }: { heading: string; subheading: s
                     className="schedule-detail-btn"
                     aria-label={`Details for ${it.event}`}
                   >
-                    ?
+                    Details
                   </button>
                   <span role="tooltip" className="schedule-detail-tip">{it.details}</span>
                 </span>
@@ -75,7 +76,7 @@ export default function ScheduleSection() {
       />
       <div className="schedule-scroll">
         <div className="schedule-grid">
-          <Column heading="Day 1" subheading="Saturday, May 16" items={day1} />
+          <Column heading="Day 1" subheading="Saturday, May 16" items={day1} scrollHint />
           <Column heading="Day 2" subheading="Sunday, May 17" items={day2} />
         </div>
       </div>

@@ -948,34 +948,52 @@
   vertical-align: baseline;
 }
 
+.schedule-scroll-hint {
+  display: block;
+  font-family: 'PhoFont', sans-serif;
+  font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+  font-style: italic;
+  font-weight: 700;
+  color: #08305a;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.15rem;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+}
+
 .schedule-detail-wrap {
   position: relative;
-  display: inline-block;
-  margin-left: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.55em;
   vertical-align: middle;
+  line-height: 1;
 }
 
 .schedule-detail-btn {
-  width: 1.4em;
-  height: 1.4em;
-  padding: 0;
-  border: 1.5px solid #08305a;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.78);
-  color: #08305a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.22em 0.7em;
+  border: none;
+  border-radius: 0.28em;
+  background: #08305a;
+  color: #ffffff;
   font-family: 'PhoFont', sans-serif;
-  font-size: 0.78em;
-  font-weight: 800;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   line-height: 1;
+  text-shadow: none;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s, transform 0.15s;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+  vertical-align: middle;
 }
 
 .schedule-detail-btn:hover,
 .schedule-detail-btn:focus-visible {
-  background: #08305a;
-  color: #ffffff;
-  transform: scale(1.08);
+  background: #0a4480;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(8, 48, 90, 0.35);
   outline: none;
 }
 
