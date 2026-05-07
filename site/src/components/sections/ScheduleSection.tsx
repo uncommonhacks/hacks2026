@@ -18,7 +18,7 @@ const haifengDetails: SpeakerDetails = {
   affiliation: 'Assistant Professor of Computer Science at UChicago',
   imageSrc: '/assets/speakers/haifeng.png',
   bio:
-    'Director of SIGMA Lab, research in multi-agent systems, game theory, and AI.',
+    'Director of SIGMA Lab, research in multi—agent systems, game theory, and AI.',
   talkTitle: 'Forecasting as a New Frontier of AI Intelligence',
   talkDescription:
     "Thus far, AI's reasoning capabilities, i.e., AI intelligence, has been mostly measured by math (or science more generally) and coding. In this talk, Professor Xu will discuss why forecasting should and will be a new frontier of AI intelligence. He will share evidences across different spaces — from academic research findings, to commercial potentials, and to efforts from frontier labs, various startups in stealth as well as nonprofits.",
@@ -111,6 +111,8 @@ function SpeakerModal({ details, onClose }: { details: SpeakerDetails; onClose: 
               src={details.imageSrc}
               alt={details.name}
               className="speaker-modal-photo"
+              loading="eager"
+              decoding="sync"
             />
             <p className="speaker-modal-bio">{wrapDashes(details.bio)}</p>
           </div>
