@@ -49,10 +49,9 @@ export default function ScheduleSection() {
   return (
     <SectionContainer index={1}>
       <img
-        className="section-title-img"
+        className="section-title-img schedule-title-img"
         src="/assets/branding/schedule_white.png"
         alt="Schedule"
-        style={{ width: '330px', maxWidth: '28vw', marginTop: '-6vh', filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5))' }}
       />
       <div className="schedule-scroll">
         <div className="schedule-grid">
