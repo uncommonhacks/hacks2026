@@ -8,6 +8,7 @@ import TracksSection from './sections/TracksSection';
 import SponsorsSection from './sections/SponsorsSection';
 import FAQSection from './sections/FAQSection';
 import ContactSection from './sections/ContactSection';
+import ScheduleSection from './sections/ScheduleSection';
 import './OceanViewport.css';
 
 export default function OceanViewport() {
@@ -26,6 +27,7 @@ export default function OceanViewport() {
       <SponsorsSection />
       <FAQSection />
       <ContactSection />
+      <ScheduleSection />
 
       <SideNav />
     </div>

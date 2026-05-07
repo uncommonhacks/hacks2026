@@ -14,6 +14,7 @@ export const SECTIONS: SectionConfig[] = [
   { id: 'sponsors', label: 'Sponsors', hash: '#sponsors', bgPosition: 0.57, depthZone: 0.6 },
   { id: 'faq',      label: 'FAQ',      hash: '#faq',      bgPosition: 0.77, depthZone: 0.8 },
   { id: 'contact',  label: 'Contact',  hash: '#contact',  bgPosition: 0.92, depthZone: 1 },
+  { id: 'schedule', label: 'Schedule', hash: '#schedule', bgPosition: 1.0,  depthZone: 1 },
 ];
 
 export const TRANSITION_DURATION = 1.0;
