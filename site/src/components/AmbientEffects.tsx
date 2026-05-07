@@ -70,9 +70,9 @@ export default function AmbientEffects() {
         </div>
       )}
 
-      {/* Bubbles — only underwater (sections 1+) */}
+      {/* Bubbles — only underwater (Tracks onward); skipped on Schedule for legibility */}
       <div className="bubbles-container" style={{
-        opacity: currentSection >= 1 ? 1 : 0,
+        opacity: currentSection >= 2 ? 1 : 0,
         transition: 'opacity 0.7s ease',
       }}>
         {bubbles.map(b => (

@@ -916,8 +916,8 @@
 
 .schedule-scroll {
   margin-top: 6vh;
-  max-height: 60vh;
-  width: min(92vw, 1100px);
+  max-height: 62vh;
+  width: min(82vw, 1000px);
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -925,6 +925,89 @@
   overscroll-behavior: contain;
   padding: 0 0.6rem;
   pointer-events: auto;
+  scrollbar-width: none;
+}
+
+.schedule-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.schedule-row .thin-dash {
+  font-size: 0.55em;
+  font-weight: 500;
+  margin: 0 0.15em;
+  vertical-align: baseline;
+}
+
+.schedule-time .thin-dash {
+  font-size: 0.55em;
+  font-weight: 500;
+  margin: 0 0.2em;
+  vertical-align: baseline;
+}
+
+.schedule-detail-wrap {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+
+.schedule-detail-btn {
+  width: 1.4em;
+  height: 1.4em;
+  padding: 0;
+  border: 1.5px solid #08305a;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.78);
+  color: #08305a;
+  font-family: 'PhoFont', sans-serif;
+  font-size: 0.78em;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+
+.schedule-detail-btn:hover,
+.schedule-detail-btn:focus-visible {
+  background: #08305a;
+  color: #ffffff;
+  transform: scale(1.08);
+  outline: none;
+}
+
+.schedule-detail-tip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: calc(100% + 0.45rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 240px;
+  background: rgba(8, 24, 50, 0.94);
+  color: #ffffff;
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.4rem;
+  font-family: 'PhoFont', sans-serif;
+  font-size: 0.85em;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+  text-shadow: none;
+  pointer-events: none;
+  z-index: 5;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.schedule-detail-wrap:hover .schedule-detail-tip,
+.schedule-detail-btn:focus-visible + .schedule-detail-tip {
+  visibility: visible;
+  opacity: 1;
 }
 
 .schedule-scroll::-webkit-scrollbar {

@@ -70,6 +70,38 @@ export const SECTION_SCENES: SectionScene[] = [
     ],
   },
 
+  // === SCHEDULE (index 1) — Just below surface; framed by side rocks so the centered grid stays clear ===
+  {
+    sectionIndex: 1,
+    decorations: [
+      // Distant fish school far up high (above the title)
+      { id: 'sch-school', src: FISH_SCHOOL, bottom: 80, left: 36, width: 22, depth: 'far', animation: 'anim-drift-slow', opacity: 0.4 },
+
+      // LEFT rock cluster: rock + paired seaweed + coral on rock + starfish on rock face
+      rock({ id: 'sch-rock-far-l',  src: R4, bottom: 1,  left: -7,  width: 14, depth: 'far', brightness: 0.85, blueTint: 0.35 }),
+      rock({ id: 'sch-rock-mid-l',  src: R3, bottom: -3, left: -10, width: 22, depth: 'mid' }),
+      { id: 'sch-yellow-coral', src: YELLOW_CORAL, bottom: -1, left: 8,  width: 5,   depth: 'mid' },
+      { id: 'sch-star',         src: ORANGE_STAR,  bottom: 5,  left: 3,  width: 3.5, depth: 'mid', brightness: 0.95 },
+      { id: 'sch-seaweed-l1',   src: SEAWEED2,     bottom: -3, left: -1, width: 5,   depth: 'mid', animation: 'anim-sway', flipX: true },
+      { id: 'sch-seaweed-l2',   src: SEAWEED1,     bottom: -3, left: 12, width: 6,   depth: 'mid', animation: 'anim-sway' },
+
+      // RIGHT rock cluster: rock + paired seaweed + coral on rock
+      rock({ id: 'sch-rock-far-r', src: R2, bottom: 2,  left: 87, width: 13, depth: 'far', brightness: 0.85, blueTint: 0.3 }),
+      rock({ id: 'sch-rock-mid-r', src: R1, bottom: -3, left: 82, width: 22, depth: 'mid', flipX: true }),
+      { id: 'sch-blue-coral',   src: BLUE_CORAL, bottom: -1, left: 90, width: 5, depth: 'mid', brightness: 0.95 },
+      { id: 'sch-seaweed-r1',   src: SEAWEED1,   bottom: -3, left: 79, width: 6, depth: 'mid', animation: 'anim-sway' },
+      { id: 'sch-seaweed-r2',   src: SEAWEED2,   bottom: -3, left: 95, width: 5, depth: 'mid', animation: 'anim-sway', flipX: true },
+
+      // Squids drifting at far edges (kept off the centered grid)
+      { id: 'sch-squid',  src: SQUID,   bottom: 24, left: 90, width: 9,  depth: 'mid', animation: 'anim-float' },
+      { id: 'sch-psquid', src: P_SQUID, bottom: 50, left: -2, width: 9,  depth: 'mid', animation: 'anim-float', brightness: 0.95 },
+
+      // Near foreground rocks (anchor the floor framing on both sides)
+      rock({ id: 'sch-rock-near-l', src: R2, bottom: -10, left: -16, width: 28, depth: 'near' }),
+      rock({ id: 'sch-rock-near-r', src: R4, bottom: -10, left: 78,  width: 32, depth: 'near', flipX: true }),
+    ],
+  },
+
   // === TRACKS (index 2) — Mid water ===
   {
     sectionIndex: 2,
