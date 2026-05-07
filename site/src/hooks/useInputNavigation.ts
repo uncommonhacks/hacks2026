@@ -26,7 +26,16 @@ export function useInputNavigation() {
   const lastScrollableTime = useRef(0);
 
   useEffect(() => {
+    function isLocked() {
+      return document.body.classList.contains('modal-open');
+    }
+
     function handleWheel(e: WheelEvent) {
+      if (isLocked()) {
+        e.preventDefault();
+        wheelAccumulator.current = 0;
+        return;
+      }
       const scrollable = findScrollable(e.target);
       if (scrollable) {
         const atTop = scrollable.scrollTop <= 0;
@@ -61,6 +70,7 @@ export function useInputNavigation() {
     }
 
     function handleKeyDown(e: KeyboardEvent) {
+      if (isLocked()) return;
       if (e.key === 'ArrowDown') {
         e.preventDefault();
         navigateBy(1);
@@ -71,16 +81,30 @@ export function useInputNavigation() {
     }
 
     function handleTouchStart(e: TouchEvent) {
+      if (isLocked()) {
+        touchStartY.current = null;
+        touchScrollable.current = null;
+        return;
+      }
       touchStartY.current = e.touches[0].clientY;
       touchScrollable.current = findScrollable(e.target);
     }
 
     function handleTouchMove(e: TouchEvent) {
+      if (isLocked()) {
+        e.preventDefault();
+        return;
+      }
       if (touchScrollable.current) return;
       e.preventDefault();
     }
 
     function handleTouchEnd(e: TouchEvent) {
+      if (isLocked()) {
+        touchStartY.current = null;
+        touchScrollable.current = null;
+        return;
+      }
       const wasScrollable = touchScrollable.current;
       touchScrollable.current = null;
       if (wasScrollable) {

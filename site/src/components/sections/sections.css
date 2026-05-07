@@ -1148,9 +1148,6 @@
   font-weight: 800;
   color: #08305a;
   line-height: 1.3;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .speaker-modal-description {

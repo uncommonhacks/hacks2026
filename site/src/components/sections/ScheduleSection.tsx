@@ -29,7 +29,7 @@ const sarathriDetails: SpeakerDetails = {
   affiliation: 'Senior Solutions Architect at Snowflake',
   imageSrc: '/assets/speakers/sarathri_balakrishnan.jpg',
   bio:
-    "Sarathri Balakrishnan helps enterprise teams at Snowflake build and ship data and AI/ML systems — bridging research ML with how it actually runs inside a modern data stack.",
+    'Senior Solutions Architect at Snowflake, work in enterprise data infrastructure, ML deployment, and production AI systems.',
   talkTitle: 'Leading edge Data and AI stack: Getting to know Snowflake and its AI/ML capabilities',
   talkDescription:
     "Thus far, most ML and AI learning has lived in the classroom and on benchmark leaderboards. In this talk, Sarathri Balakrishnan will move beyond the classroom and walk through how real customers deploy ML and AI solutions using Snowflake. She will share professional insights and career pathing advice across industry use cases — covering deployment patterns and the practical decisions that turn a model into a shipped product.",
@@ -76,9 +76,11 @@ function SpeakerModal({ details, onClose }: { details: SpeakerDetails; onClose: 
     };
     window.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
     return () => {
       window.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
     };
   }, [onClose]);
 
@@ -132,9 +134,11 @@ function PlaceholderModal({ event, onClose }: { event: string; onClose: () => vo
     };
     window.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
     return () => {
       window.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
     };
   }, [onClose]);
 
