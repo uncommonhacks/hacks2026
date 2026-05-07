@@ -58,7 +58,7 @@ const day2: Item[] = [
   { time: '8:45 AM', event: 'Breakfast' },
   { time: '9:30 AM', event: 'Soft deadline' },
   { time: '9:45 AM', event: 'Hard deadline' },
-  { time: '10:00 AM — 12:00 PM', event: 'Judge deliberations' },
+  { time: '10 PM', event: 'Judge deliberations' },
   { time: '12:30 PM', event: 'Winners announced, prizes and photos' },
   { time: '1:00 PM', event: 'Event Ends!' },
 ];
