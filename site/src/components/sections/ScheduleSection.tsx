@@ -183,7 +183,13 @@ function Column({
 }) {
   return (
     <div className="schedule-day">
-      {scrollHint && <span className="schedule-scroll-hint">Scroll!</span>}
+      <span
+        className="schedule-scroll-hint"
+        style={{ visibility: scrollHint ? 'visible' : 'hidden' }}
+        aria-hidden={!scrollHint}
+      >
+        Scroll!
+      </span>
       <h3 className="schedule-day-heading">
         {heading}: <span className="schedule-day-sub">{subheading}</span>
       </h3>
