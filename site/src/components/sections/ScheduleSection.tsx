@@ -7,7 +7,7 @@ const day1: Item[] = [
   { time: '10:15 AM', event: 'Opening ceremony' },
   { time: '10:45 AM', event: 'Hacking begins' },
   { time: '12:00 PM', event: 'Lunch' },
-  { time: '2:00 PM', event: 'Speaker: Prof. Haifeng Xu (Sigma Labs)', details: 'Details coming soon.' },
+  { time: '2:00 PM', event: 'Speaker: Prof. Haifeng Xu', details: 'Details coming soon.' },
   { time: '3:00 PM', event: 'Workshop: Wafer', details: 'Details coming soon.' },
   { time: '3:30 PM', event: 'Speaker: Tensormesh', details: 'Details coming soon.' },
   { time: '4:00 PM', event: 'Workshop: Laminar', details: 'Details coming soon.' },
