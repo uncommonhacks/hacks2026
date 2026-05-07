@@ -12,6 +12,8 @@ export default function Decoration({ config, currentSection }: Props) {
     currentSection >= (config.visibleFromSection ?? 0) &&
     currentSection <= (config.visibleThroughSection ?? Number.POSITIVE_INFINITY);
 
+  if (!isVisible) return null;
+
   // Silhouette: darken assets as depth increases past their threshold
   const darkenAmount = config.darkenAfter !== undefined
     ? Math.max(0, Math.min(1, (depthZone - config.darkenAfter) / 0.3))
@@ -30,9 +32,9 @@ export default function Decoration({ config, currentSection }: Props) {
         width: `${config.width}%`,
         height: 'auto',
         filter: `brightness(${brightness})`,
-        transition: 'filter 0.8s ease, opacity 0.6s ease',
+        transition: 'filter 0.8s ease',
         transform: config.flipX ? 'scaleX(-1)' : undefined,
-        opacity: isVisible ? (config.opacity ?? 1) : 0,
+        opacity: config.opacity ?? 1,
       }}
     />
   );
