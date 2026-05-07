@@ -14,10 +14,10 @@ type Item = { time: string; event: string; details?: SpeakerDetails | string };
 
 const haifengDetails: SpeakerDetails = {
   name: 'Haifeng Xu',
-  affiliation: 'Assistant Professor in the Department of Computer Science at UChicago',
+  affiliation: 'Assistant Professor of Computer/Data Science at UChicago',
   imageSrc: '/assets/speakers/haifeng.png',
   bio:
-    'Haifeng Xu is an Assistant Professor in the Department of Computer Science at the University of Chicago, where he directs the Strategic IntelliGence for Machine Agents (SIGMA) Lab. He is also an AI2050 Early Career Fellow and a part-time staff scientist at Google Research. His research pushes AI beyond recognition-level capabilities toward agency-level intelligence — reasoning, communication, and strategic decision-making in multi-agent environments — and underpins recent work on benchmarks and platforms for evaluating AI judgment under uncertainty.',
+    'Haifeng Xu directs the Strategic IntelliGence for Machine Agents (SIGMA) Lab at UChicago and is an AI2050 Early Career Fellow and part-time staff scientist at Google Research. His research pushes AI beyond recognition tasks toward agency-level intelligence — reasoning, communication, and strategic decision-making in multi-agent environments.',
   talkTitle: 'Forecasting as a New Frontier of AI Intelligence',
   talkDescription:
     "Thus far, AI's reasoning capabilities, i.e., AI intelligence, has been mostly measured by math (or science more generally) and coding. In this talk, Professor Xu will discuss why forecasting should and will be a new frontier of AI intelligence. He will share evidences across different spaces, from academic research findings, to commercial potentials, and to efforts from frontier labs, various startups in stealth as well as non-profits.",
@@ -28,10 +28,10 @@ const sarathriDetails: SpeakerDetails = {
   affiliation: 'Senior Solutions Architect at Snowflake',
   imageSrc: '/assets/speakers/sarathri_balakrishnan.jpg',
   bio:
-    "Sarathri Balakrishnan is a Senior Solutions Architect at Snowflake, where she partners with enterprise teams to design and ship production-grade data and AI/ML systems on Snowflake's platform. She brings hands-on experience across industry verticals and works closely with customers and engineers to bridge the gap between research-grade ML and the realities of deploying it inside a modern data stack.",
+    "Sarathri Balakrishnan partners with enterprise teams at Snowflake to design and ship production-grade data and AI/ML systems on Snowflake's platform. She works across industry verticals to bridge the gap between research-grade ML and the realities of running it inside a modern data stack.",
   talkTitle: 'Leading edge Data and AI stack: Getting to know Snowflake and its AI/ML capabilities',
   talkDescription:
-    "Thus far, most ML and AI learning has lived in the classroom and on benchmark leaderboards. In this talk, Sarathri Balakrishnan will move beyond the classroom and walk through how real-world customers deploy ML and AI solutions using Snowflake. She will share professional insights and career pathing advice across industry use cases — covering deployment patterns, the trade-offs that shape production AI systems, and the day-to-day decisions that turn a model into a shipped product.",
+    "Thus far, most ML and AI learning has lived in the classroom and on benchmark leaderboards. In this talk, Sarathri Balakrishnan will move beyond the classroom and walk through how real-world customers deploy ML and AI solutions using Snowflake. She will share professional insights and career pathing advice across industry use cases — covering deployment patterns and the practical trade-offs that turn a model into a shipped product.",
 };
 
 const PLACEHOLDER = 'Details coming soon.';
