@@ -32,7 +32,7 @@ const sarathriDetails: SpeakerDetails = {
     'Senior Solutions Architect at Snowflake, work in enterprise data infrastructure, ML deployment, and production AI systems.',
   talkTitle: 'Leading edge Data and AI stack: Getting to know Snowflake and its AI/ML capabilities',
   talkDescription:
-    "For a lot of people, most ML and AI learning lived in classrooms and on benchmark leaderboards. In this talk, Sarathri Balakrishnan will move beyond the classroom and walk through how real customers in industry deploy ML and AI solutions using Snowflake. He will also share professional insights and career pathing advice across industry use cases — covering deployment patterns and the practical decisions that turn a model into a shipped product. The talk will end with an interactive session for hackers who are attempting the Snowflake challenge prompts, which will be released before the hackathon begins.",
+    "For a lot of people, most ML and AI learning live in classrooms and on benchmark leaderboards. In this talk, Sarathri Balakrishnan will move beyond the classroom and walk through how real customers in industry deploy ML and AI solutions using Snowflake. He will also share professional insights and career pathing advice across industry use cases — covering deployment patterns and the practical decisions that turn a model into a shipped product. The talk will end with an interactive session for hackers who are attempting the Snowflake challenge prompts, which will be released before the hackathon begins.",
 };
 
 const PLACEHOLDER = 'Details coming soon.';
