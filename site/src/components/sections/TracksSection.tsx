@@ -39,7 +39,7 @@ const AWARDS: Item[] = [
   { name: 'Best Use of Snowflake', desc: 'For the most clever application of Snowflake data infrastructure — turning raw data into something insightful.', image: '/assets/tracks/snowflake.png', prize: '6–month access to Snowflake + LinkedIn feature' },
 ];
 
-function TrackPanel({ items, kind, heading }: { items: Item[]; kind: 'track' | 'award'; heading: string }) {
+function TrackPanel({ items, kind, heading, subheading }: { items: Item[]; kind: 'track' | 'award'; heading: string; subheading?: string }) {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const total = items.length;
@@ -59,7 +59,15 @@ function TrackPanel({ items, kind, heading }: { items: Item[]; kind: 'track' | '
 
   return (
     <div className={`track-panel track-panel--${kind}`}>
-      <h2 className="track-panel-heading">{heading}</h2>
+      <h2 className="track-panel-heading">
+        {heading}
+        {subheading && (
+          <>
+            <br />
+            <span className="track-panel-subheading">{subheading}</span>
+          </>
+        )}
+      </h2>
       <div className="track-panel-square">
         <img
           key={index}
@@ -125,7 +133,7 @@ export default function TracksSection() {
         />
         <div className="tracks-scroll">
           <div className="track-panels">
-            <TrackPanel items={TRACKS} kind="track" heading="MAIN TRACKS (AND THEIR SPONSORS)" />
+            <TrackPanel items={TRACKS} kind="track" heading="MAIN TRACKS" subheading="(AND THEIR SPONSORS)" />
             <TrackPanel items={AWARDS} kind="award" heading="AWARDS" />
           </div>
         </div>
