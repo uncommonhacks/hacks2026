@@ -11,18 +11,20 @@ const tier1: Sponsor[] = [
 const tier2: Sponsor[] = [
   { name: 'McMaster-Carr', file: 'McMaster-Carr_logo.svg.png' },
   { name: 'Laminar', file: 'laminar-logo.svg' },
-  { name: 'Snowflake', file: 'Snowflake_Logo_svg.png' },
+  { name: 'XLab', file: 'xLab_Logotype.png' },
 ];
 
 const tier3RowA: Sponsor[] = [
   { name: 'UChicago Career Advancement', file: 'CareerAdvancementLogo.png' },
   { name: 'ElevenLabs', file: 'elevenlabs-logo-white.png' },
-  { name: 'Polymarket', file: 'polymarket-logo-white.png' },
+  { name: 'Snowflake', file: 'Snowflake_Logo_svg.png' },
 ];
 
 const tier3RowB: Sponsor[] = [
   { name: 'Tower Research Capital', file: 'Tower_Research_Capital_Logo.png' },
   { name: 'Cursor', file: 'cursor-logo.png' },
+  { name: 'Polymarket', file: 'polymarket-logo-white.png' },
+  { name: 'Lovable', file: 'lovable.svg' },
 ];
 
 export default function SponsorsSection() {
