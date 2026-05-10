@@ -133,7 +133,7 @@ export default function TracksSection() {
         />
         <div className="tracks-scroll">
           <div className="track-panels">
-            <TrackPanel items={TRACKS} kind="track" heading="MAIN TRACKS" subheading="(AND THEIR SPONSORS)" />
+            <TrackPanel items={TRACKS} kind="track" heading="MAIN TRACKS" />
             <TrackPanel items={AWARDS} kind="award" heading="AWARDS" />
           </div>
         </div>
