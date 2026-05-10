@@ -29,7 +29,7 @@ const TRACKS: Item[] = [
   { name: 'Best Inference (Wafer)', desc: 'For the team pushing the limits of how models reason at the edge — speed, efficiency, scale, and novelty.', image: '/assets/tracks/inference.png', prize: '$1000' },
   { name: 'Game Design', desc: 'For the most polished, playable, and inventive game built over the weekend — fresh, fun, and unforgettable.', image: '/assets/tracks/gamedesign.png', prize: '$800' },
   { name: 'Social Impact', desc: 'For projects that tackle real human problems — accessibility, community, education, or anything beyond that.', image: '/assets/tracks/socialimpact.png', prize: '$800' },
-  { name: 'Agents for Prediction Markets (Sigma Lab)', desc: 'For the most capable autonomous agent operating in prediction markets — reasoning, betting, and adapting.', image: '/assets/tracks/predictionmarket.png', prize: '$800' },
+  { name: 'Agents for Prediction Markets (Sigma Lab)', desc: 'For the best agent in prediction markets — reasoning and adapting.', image: '/assets/tracks/predictionmarket.png', prize: '$800', moreInfoUrl: 'https://docs.google.com/document/d/14hAv8dZNKnx4hrz86mglbYIZ23Ja2Wp8OwdKZ8RPse4/edit?usp=sharing' },
   { name: 'Best Acceleration (Tensormesh)', desc: 'For the team that finds an existing workflow and cleverly optimizes it — automation, efficiency, and pure speed.', image: '/assets/tracks/realdata.png', prize: '$1,000' },
 ];
 
