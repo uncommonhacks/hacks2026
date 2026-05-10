@@ -518,6 +518,17 @@
     0 0 40px rgba(255, 255, 255, 0.4);
 }
 
+.track-panel-link {
+  color: #1e3a8a;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  font-weight: 800;
+}
+
+.track-panel-link:hover {
+  color: #2563eb;
+}
+
 .track-panel-prize {
   font-family: 'PhoFont', sans-serif;
   font-size: clamp(1.25rem, 1.6vw, 1.95rem);

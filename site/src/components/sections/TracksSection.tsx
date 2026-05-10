@@ -22,15 +22,15 @@ function wrapPrize(s: string) {
   );
 }
 
-type Item = { name: string; desc: string; image: string; prize: string };
+type Item = { name: string; desc: string; image: string; prize: string; moreInfoUrl?: string };
 
 const TRACKS: Item[] = [
-  { name: 'Zero Trust', desc: 'For the sharpest hack in security — breaking systems, building defenses, and rethinking how we protect what matters.', image: '/assets/tracks/security.png', prize: '$800' },
-  { name: 'Inference', desc: 'For the team pushing the limits of how models reason at the edge — speed, efficiency, scale, and novelty.', image: '/assets/tracks/inference.png', prize: '$1000' },
+  { name: 'AI Safety (XLab)', desc: 'For the project that confronts the risks of advanced AI — alignment, evaluation, interpretability, and red—teaming the systems we will all rely on.', image: '/assets/tracks/security.png', prize: '$1000', moreInfoUrl: 'https://docs.google.com/document/d/10v01apW04bVNBBWYw37yvalaSIaLOR26su-SVHcsI0Q/edit?tab=t.x4mzga1jdrrb#heading=h.i3s2mkowdh8l' },
+  { name: 'Best Inference (Wafer)', desc: 'For the team pushing the limits of how models reason at the edge — speed, efficiency, scale, and novelty.', image: '/assets/tracks/inference.png', prize: '$1000' },
   { name: 'Game Design', desc: 'For the most polished, playable, and inventive game built over the weekend — fresh, fun, and unforgettable.', image: '/assets/tracks/gamedesign.png', prize: '$800' },
   { name: 'Social Impact', desc: 'For projects that tackle real human problems — accessibility, community, education, or anything beyond that.', image: '/assets/tracks/socialimpact.png', prize: '$800' },
-  { name: 'Agents for Prediction Markets', desc: 'For the most capable autonomous agent operating in prediction markets — reasoning, betting, and adapting.', image: '/assets/tracks/predictionmarket.png', prize: '$800' },
-  { name: 'Best Acceleration', desc: 'For the team that finds an existing workflow and cleverly optimizes it — automation, efficiency, and pure speed.', image: '/assets/tracks/realdata.png', prize: '$1,000' },
+  { name: 'Agents for Prediction Markets (Sigma Lab)', desc: 'For the most capable autonomous agent operating in prediction markets — reasoning, betting, and adapting.', image: '/assets/tracks/predictionmarket.png', prize: '$800' },
+  { name: 'Best Acceleration (Tensormesh)', desc: 'For the team that finds an existing workflow and cleverly optimizes it — automation, efficiency, and pure speed.', image: '/assets/tracks/realdata.png', prize: '$1,000' },
 ];
 
 const AWARDS: Item[] = [
@@ -69,7 +69,23 @@ function TrackPanel({ items, kind, heading }: { items: Item[]; kind: 'track' | '
         />
       </div>
       <h3 className="track-panel-name">{wrapDashes(current.name)}</h3>
-      <p className="track-panel-desc">{wrapDashes(current.desc)}</p>
+      <p className="track-panel-desc">
+        {wrapDashes(current.desc)}
+        {current.moreInfoUrl && (
+          <>
+            {' '}For more details, click{' '}
+            <a
+              className="track-panel-link"
+              href={current.moreInfoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              here
+            </a>
+            .
+          </>
+        )}
+      </p>
       <p className="track-panel-prize">{wrapPrize(current.prize)}</p>
       <div className="track-panel-pager">
         <button
@@ -109,8 +125,8 @@ export default function TracksSection() {
         />
         <div className="tracks-scroll">
           <div className="track-panels">
-            <TrackPanel items={TRACKS} kind="track" heading="MAIN TRACKS" />
-            <TrackPanel items={AWARDS} kind="award" heading="SPONSORED TRACKS" />
+            <TrackPanel items={TRACKS} kind="track" heading="MAIN TRACKS (AND THEIR SPONSORS)" />
+            <TrackPanel items={AWARDS} kind="award" heading="AWARDS" />
           </div>
         </div>
       </div>
