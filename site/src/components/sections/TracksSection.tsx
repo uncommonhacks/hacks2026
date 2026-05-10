@@ -25,7 +25,7 @@ function wrapPrize(s: string) {
 type Item = { name: string; desc: string; image: string; prize: string; moreInfoUrl?: string };
 
 const TRACKS: Item[] = [
-  { name: 'AI Safety (XLab)', desc: 'For the project that confronts the risks of advanced AI — alignment, evaluation, interpretability, and red—teaming the systems we will all rely on.', image: '/assets/tracks/security.png', prize: '$1000', moreInfoUrl: 'https://docs.google.com/document/d/10v01apW04bVNBBWYw37yvalaSIaLOR26su-SVHcsI0Q/edit?tab=t.x4mzga1jdrrb#heading=h.i3s2mkowdh8l' },
+  { name: 'AI Safety (XLab)', desc: 'For AI safety projects — alignment, evaluation, and red—teaming.', image: '/assets/tracks/security.png', prize: '$1000', moreInfoUrl: 'https://docs.google.com/document/d/10v01apW04bVNBBWYw37yvalaSIaLOR26su-SVHcsI0Q/edit?tab=t.x4mzga1jdrrb#heading=h.i3s2mkowdh8l' },
   { name: 'Best Inference (Wafer)', desc: 'For the team pushing the limits of how models reason at the edge — speed, efficiency, scale, and novelty.', image: '/assets/tracks/inference.png', prize: '$1000' },
   { name: 'Game Design', desc: 'For the most polished, playable, and inventive game built over the weekend — fresh, fun, and unforgettable.', image: '/assets/tracks/gamedesign.png', prize: '$800' },
   { name: 'Social Impact', desc: 'For projects that tackle real human problems — accessibility, community, education, or anything beyond that.', image: '/assets/tracks/socialimpact.png', prize: '$800' },
