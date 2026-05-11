@@ -44,7 +44,7 @@ const day1: Item[] = [
   { time: '9:00 AM', event: 'Doors open, check—in, team formation' },
   { time: '10:15 AM', event: 'Opening ceremony' },
   { time: '10:45 AM', event: 'Lovable talk' },
-  { time: '11 AM', event: 'Hacking begins' },
+  { time: '11:00 AM', event: 'Hacking begins' },
   { time: '12:00 PM', event: 'Lunch' },
   { time: '2:00 PM', event: 'Speaker: Prof. Haifeng Xu', details: haifengDetails },
   { time: '3:00 PM', event: 'Workshop: Wafer', details: PLACEHOLDER },
