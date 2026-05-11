@@ -41,9 +41,10 @@ const LAMINAR_BODY =
   'Building and debugging your first AI Agent with Laminar, an open—source observability platform for long—running agents. Trace in one line, debug from any step, detect patterns at scale.';
 
 const day1: Item[] = [
-  { time: '9:00 AM', event: 'Doors open, check-in, team formation' },
+  { time: '9:00 AM', event: 'Doors open, check—in, team formation' },
   { time: '10:15 AM', event: 'Opening ceremony' },
-  { time: '10:45 AM', event: 'Hacking begins' },
+  { time: '10:45 AM', event: 'Lovable talk' },
+  { time: '11 AM', event: 'Hacking begins' },
   { time: '12:00 PM', event: 'Lunch' },
   { time: '2:00 PM', event: 'Speaker: Prof. Haifeng Xu', details: haifengDetails },
   { time: '3:00 PM', event: 'Workshop: Wafer', details: PLACEHOLDER },
@@ -61,7 +62,7 @@ const day2: Item[] = [
   { time: '8:45 AM', event: 'Breakfast' },
   { time: '9:30 AM', event: 'Soft deadline' },
   { time: '9:45 AM', event: 'Hard deadline' },
-  { time: '10 PM', event: 'Judge deliberations' },
+  { time: '10 AM', event: 'Judge deliberations' },
   { time: '12:30 PM', event: 'Winners announced, prizes and photos' },
   { time: '1:00 PM', event: 'Event Ends!' },
 ];
