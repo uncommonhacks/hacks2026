@@ -35,10 +35,14 @@ const sarathriDetails: SpeakerDetails = {
     "For a lot of people, most ML and AI learning live in classrooms and on benchmark leaderboards. In this talk, Sarathri Balakrishnan will move beyond the classroom and walk through how real customers in industry deploy ML and AI solutions using Snowflake. He will also share professional insights and career pathing advice across industry use cases — covering deployment patterns and the practical decisions that turn a model into a shipped product. The talk will end with an interactive session for hackers who are attempting the Snowflake challenge prompts, which will be released before the hackathon begins.",
 };
 
-const PLACEHOLDER = 'Details coming soon.';
-
 const LAMINAR_BODY =
   'Building and debugging your first AI Agent with Laminar, an open—source observability platform for long—running agents. Trace in one line, debug from any step, detect patterns at scale.';
+
+const WAFER_BODY =
+  'Speed is the moat. Wafer will showcase how fast open source models perform far better and cheaper at scale for many tasks.';
+
+const XLAB_BODY =
+  'How capable could AI get in the next 10 years? What are the catastrophic risks involved? What can we do about them? The first half of the workshop will be a short presentation on those questions; in the second half, XLab will talk about practical tips for AI safety projects and research.';
 
 const day1: Item[] = [
   { time: '9:00 AM', event: 'Doors open, check in, team formation' },
@@ -47,7 +51,8 @@ const day1: Item[] = [
   { time: '11:00 AM', event: 'Hacking begins' },
   { time: '12:00 PM', event: 'Lunch' },
   { time: '2:00 PM', event: 'Speaker: Prof. Haifeng Xu', details: haifengDetails },
-  { time: '3:00 PM', event: 'Workshop: Wafer', details: PLACEHOLDER },
+  { time: '3:00 PM', event: 'Workshop: Wafer', details: WAFER_BODY },
+  { time: '3:30 PM', event: 'Workshop: XLab', details: XLAB_BODY },
   { time: '4:00 PM', event: 'Workshop: Laminar', details: LAMINAR_BODY },
   { time: '4:30 PM', event: 'Speaker: Sarathri Balakrishnan (Snowflake)', details: sarathriDetails },
   { time: '6:00 PM', event: 'Dinner' },
